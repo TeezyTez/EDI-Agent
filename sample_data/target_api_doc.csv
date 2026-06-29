@@ -1,0 +1,7 @@
+endpoint,method,param_path,param_name,description,type,required,example
+/api/v1/orders/push,POST,order.orderNo,orderNo,Order number,string,True,SO-1001
+/api/v1/orders/push,POST,order.orderDate,orderDate,Order creation date,date,True,2026-06-22
+/api/v1/orders/push,POST,buyer.name,name,Customer buyer name,string,True,Acme Trading
+/api/v1/orders/push,POST,payment.amount,amount,Total order amount,number,True,199.5
+/api/v1/orders/push,POST,payment.currency,currency,Currency code,string,True,USD
+/api/v1/orders/push,POST,order.status,status,Target order status,string,True,Created

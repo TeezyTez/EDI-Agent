@@ -1,0 +1,8 @@
+{
+  "order_id": "SO-1001",
+  "buyer_name": "Acme Trading",
+  "order_date": "2026-06-22",
+  "total_amount": 199.5,
+  "currency_code": "USD",
+  "order_status": "Created"
+}

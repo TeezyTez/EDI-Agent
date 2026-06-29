@@ -1,0 +1,7 @@
+table_name,column_name,description,type,required,example
+orders,order_no,Order number in source database,string,True,SO-1001
+orders,created_at,Order creation date,date,True,2026-06-22
+customers,name,Customer buyer name,string,True,Acme Trading
+orders,total_amount,Total order amount,number,True,199.5
+orders,currency_code,Currency code,string,True,USD
+orders,status,Order status,string,True,NEW

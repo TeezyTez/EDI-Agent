@@ -1,0 +1,7 @@
+field_name,description,type,required,example
+order_id,Order identifier,string,True,SO-1001
+buyer_name,Customer buyer name,string,True,Acme Trading
+order_date,Order created date,date,True,2026-06-22
+total_amount,Total amount of the order,number,True,199.5
+currency_code,Currency code,string,True,USD
+order_status,Target order status,string,True,Created

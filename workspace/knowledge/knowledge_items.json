@@ -1,0 +1,1250 @@
+[
+  {
+    "id": "59f54fb3-3d30-4b05-8eaa-68b2ec25e9e4",
+    "title": "Voyage record structure",
+    "category": "business_context",
+    "content": "The file contains multiple record types: VOY (voyage header), BOL (bill of lading), CTR (container), CON (container detail), and END (trailer). Each BOL is followed by its CTR and CON records.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "record_structure",
+      "edi_file"
+    ],
+    "metadata": {
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.783108Z"
+  },
+  {
+    "id": "6e7e9422-2ee6-40d4-83e6-e4bf74697d4d",
+    "title": "VOY record fields",
+    "category": "historical_mapping",
+    "content": "VOY record: VOY, voyage_number, vessel_code, vessel_name, voyage_number_2, port_code, departure_date, job_number, service_type, leg_number, another_code.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "voyage",
+      "header"
+    ],
+    "metadata": {
+      "target_field": "voyage",
+      "source_fields": [
+        "VOY.voyage_number",
+        "VOY.vessel_code",
+        "VOY.vessel_name",
+        "VOY.voyage_number_2",
+        "VOY.port_code",
+        "VOY.departure_date",
+        "VOY.job_number",
+        "VOY.service_type",
+        "VOY.leg_number",
+        "VOY.another_code"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.786098Z"
+  },
+  {
+    "id": "b53ae192-0d8c-47b9-937a-10d7ea13c0cf",
+    "title": "BOL record fields",
+    "category": "historical_mapping",
+    "content": "BOL record: BOL, bol_number, voyage_number, vessel_code, origin_port, origin_port_2, destination_port, destination_port_2, date, empty, movement_type, empty2, empty3, empty4, service_type, transshipment_indicator, mode, lcl_fcl, origin_country, empty5, empty6, empty7, empty8, empty9, empty10, empty11, shipper_name, shipper_address, destination_country, consignee_code, consignee_name, consignee_address, empty12, notify_name, notify_address, empty13, empty14, empty15, empty16, empty17, marks_numbers, booking_number, description, package_count, package_unit, package_code, container_number, seal_number, empty18, empty19, empty20, gross_weight, gross_weight_2, volume, volume_2, volume_3, volume_4, empty21, incoterm, empty22.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "bol",
+      "bill_of_lading"
+    ],
+    "metadata": {
+      "target_field": "bol",
+      "source_fields": [
+        "BOL.bol_number",
+        "BOL.voyage_number",
+        "BOL.vessel_code",
+        "BOL.origin_port",
+        "BOL.origin_port_2",
+        "BOL.destination_port",
+        "BOL.destination_port_2",
+        "BOL.date",
+        "BOL.movement_type",
+        "BOL.service_type",
+        "BOL.transshipment_indicator",
+        "BOL.mode",
+        "BOL.lcl_fcl",
+        "BOL.origin_country",
+        "BOL.shipper_name",
+        "BOL.shipper_address",
+        "BOL.destination_country",
+        "BOL.consignee_code",
+        "BOL.consignee_name",
+        "BOL.consignee_address",
+        "BOL.notify_name",
+        "BOL.notify_address",
+        "BOL.marks_numbers",
+        "BOL.booking_number",
+        "BOL.description",
+        "BOL.package_count",
+        "BOL.package_unit",
+        "BOL.package_code",
+        "BOL.container_number",
+        "BOL.seal_number",
+        "BOL.gross_weight",
+        "BOL.gross_weight_2",
+        "BOL.volume",
+        "BOL.volume_2",
+        "BOL.volume_3",
+        "BOL.volume_4",
+        "BOL.incoterm"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.787095Z"
+  },
+  {
+    "id": "01b211d2-0665-45c5-90f4-ab09f6910410",
+    "title": "CTR record fields",
+    "category": "historical_mapping",
+    "content": "CTR record: CTR, container_number, seal_number, weight, booking_number.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "container",
+      "ctr"
+    ],
+    "metadata": {
+      "target_field": "container",
+      "source_fields": [
+        "CTR.container_number",
+        "CTR.seal_number",
+        "CTR.weight",
+        "CTR.booking_number"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.789089Z"
+  },
+  {
+    "id": "91f1ca43-8517-42c8-8aac-1a843454fe1e",
+    "title": "CON record fields",
+    "category": "historical_mapping",
+    "content": "CON record: CON, sequence_number, marks_numbers, description, hazardous_indicator, booking_number, package_count, package_unit, package_code, empty1, gross_weight, volume, empty2, empty3, empty4, empty5, empty6, service_type, empty7, empty8, empty9.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "container_detail",
+      "con"
+    ],
+    "metadata": {
+      "target_field": "container_detail",
+      "source_fields": [
+        "CON.sequence_number",
+        "CON.marks_numbers",
+        "CON.description",
+        "CON.hazardous_indicator",
+        "CON.booking_number",
+        "CON.package_count",
+        "CON.package_unit",
+        "CON.package_code",
+        "CON.gross_weight",
+        "CON.volume",
+        "CON.service_type"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.790085Z"
+  },
+  {
+    "id": "121df5ea-8a30-4ccd-b70b-86e00eb19c4d",
+    "title": "END record fields",
+    "category": "historical_mapping",
+    "content": "END record: END, bol_count, container_count, system_name.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "trailer",
+      "end"
+    ],
+    "metadata": {
+      "target_field": "trailer",
+      "source_fields": [
+        "END.bol_count",
+        "END.container_count",
+        "END.system_name"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.791082Z"
+  },
+  {
+    "id": "819e3bbd-9e29-4b99-84b2-82a00fd7129e",
+    "title": "Movement type codes",
+    "category": "enum_mapping",
+    "content": "BOL movement_type: 'I' = Import, 'T' = Transshipment.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "movement_type",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "movement_type",
+      "source_fields": [
+        "BOL.movement_type"
+      ],
+      "enum_map": {
+        "I": "Import",
+        "T": "Transshipment"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.794072Z"
+  },
+  {
+    "id": "87511d11-d226-43cd-9049-86b205296329",
+    "title": "Service type codes",
+    "category": "enum_mapping",
+    "content": "BOL service_type: 'L' = LCL (Less than Container Load).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "service_type",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "service_type",
+      "source_fields": [
+        "BOL.service_type"
+      ],
+      "enum_map": {
+        "L": "LCL"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.796066Z"
+  },
+  {
+    "id": "b20509c9-a79c-449d-aaf9-dae26e786e63",
+    "title": "Transshipment indicator",
+    "category": "enum_mapping",
+    "content": "BOL transshipment_indicator: 'Y' = Yes, 'N' = No.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "transshipment",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "transshipment_indicator",
+      "source_fields": [
+        "BOL.transshipment_indicator"
+      ],
+      "enum_map": {
+        "Y": "Yes",
+        "N": "No"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.799056Z"
+  },
+  {
+    "id": "dc04bc23-e0e6-44ac-9979-e258ee6a9972",
+    "title": "Mode codes",
+    "category": "enum_mapping",
+    "content": "BOL mode: 'S' = Sea.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "mode",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "mode",
+      "source_fields": [
+        "BOL.mode"
+      ],
+      "enum_map": {
+        "S": "Sea"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.802046Z"
+  },
+  {
+    "id": "b5543e48-2c2a-4aaf-b998-60f54fb422f5",
+    "title": "LCL/FCL indicator",
+    "category": "enum_mapping",
+    "content": "BOL lcl_fcl: 'LCL/LCL' = LCL/LCL.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "lcl_fcl",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "lcl_fcl",
+      "source_fields": [
+        "BOL.lcl_fcl"
+      ],
+      "enum_map": {
+        "LCL/LCL": "LCL/LCL"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.804039Z"
+  },
+  {
+    "id": "98349a7e-6e5d-4779-b0fc-77c9e94c1c69",
+    "title": "CON hazardous indicator",
+    "category": "enum_mapping",
+    "content": "CON hazardous_indicator: 'N' = Non-hazardous.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "hazardous",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "hazardous_indicator",
+      "source_fields": [
+        "CON.hazardous_indicator"
+      ],
+      "enum_map": {
+        "N": "Non-hazardous"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.808028Z"
+  },
+  {
+    "id": "b4e84b0e-eefd-4c1d-a7aa-c216ea1636c0",
+    "title": "CON service type",
+    "category": "enum_mapping",
+    "content": "CON service_type: 'S' = Standard.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "service_type",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "service_type",
+      "source_fields": [
+        "CON.service_type"
+      ],
+      "enum_map": {
+        "S": "Standard"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.813010Z"
+  },
+  {
+    "id": "8dd5dd10-b9e3-46ed-8f7e-e58d9c441c09",
+    "title": "Package unit codes",
+    "category": "enum_mapping",
+    "content": "Package unit codes: 'PACKAGES' = PKG, 'CARTONS' = CTN, 'BOX' = BOX, 'BALES' = BAL.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "package_unit",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "package_unit",
+      "source_fields": [
+        "BOL.package_unit",
+        "CON.package_unit"
+      ],
+      "enum_map": {
+        "PACKAGES": "PKG",
+        "CARTONS": "CTN",
+        "BOX": "BOX",
+        "BALES": "BAL"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.816000Z"
+  },
+  {
+    "id": "51fee48d-1b0b-4be9-b3b4-4ae481c10ad1",
+    "title": "Incoterm codes",
+    "category": "enum_mapping",
+    "content": "Incoterm: 'CIF' = Cost, Insurance and Freight.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "incoterm",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "incoterm",
+      "source_fields": [
+        "BOL.incoterm"
+      ],
+      "enum_map": {
+        "CIF": "CIF"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.817994Z"
+  },
+  {
+    "id": "b697377e-c365-4346-8a93-d0a71dc7591f",
+    "title": "Date format",
+    "category": "transform_rule",
+    "content": "Dates are in DD-MON-YYYY format (e.g., 01-NOV-2024). Convert to target format as needed.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "date",
+      "format"
+    ],
+    "metadata": {
+      "target_field": "date",
+      "source_fields": [
+        "VOY.departure_date",
+        "BOL.date"
+      ],
+      "transform_rule": "Convert from DD-MON-YYYY to target format",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.819988Z"
+  },
+  {
+    "id": "911cf3f6-3e4c-4a57-947c-7da31ffabb2f",
+    "title": "Weight and volume fields",
+    "category": "business_context",
+    "content": "Gross weight appears in BOL and CON as numeric values (e.g., 5253.8). Volume appears as numeric (e.g., 6.5523). Units are assumed to be kg and cbm respectively.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "weight",
+      "volume"
+    ],
+    "metadata": {
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.821981Z"
+  },
+  {
+    "id": "604653ab-dafb-4028-877e-66b6488df871",
+    "title": "Container number format",
+    "category": "business_context",
+    "content": "Container numbers follow standard format: 4 letters + 7 digits (e.g., TIIU553457). Seal numbers are numeric (e.g., 4785668).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "container",
+      "format"
+    ],
+    "metadata": {
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.824969Z"
+  },
+  {
+    "id": "bddf8182-6d3f-479a-a9c9-a2b9a4e2c601",
+    "title": "Booking number",
+    "category": "business_context",
+    "content": "Booking number appears as '770000' in all BOL and CON records.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "booking",
+      "number"
+    ],
+    "metadata": {
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.830952Z"
+  },
+  {
+    "id": "f2406234-da11-4666-8511-72a7418e76a0",
+    "title": "Shipper and consignee addresses",
+    "category": "business_context",
+    "content": "Addresses are multi-line strings with semicolons separating lines. They may contain phone, email, and contact info.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "address",
+      "format"
+    ],
+    "metadata": {
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:38:42.833942Z"
+  },
+  {
+    "id": "a45c8c8c-acd5-4df4-b0e9-d8f640335af0",
+    "title": "Voyage record structure",
+    "category": "business_context",
+    "content": "The file contains multiple record types: VOY (voyage header), BOL (bill of lading), CTR (container), CON (container detail), and END (trailer). Each BOL is followed by its CTR and CON records.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "edi_file"
+    ],
+    "metadata": {
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.065937Z"
+  },
+  {
+    "id": "1188de75-7da1-4e86-a611-b48e4bf2bf84",
+    "title": "VOY record fields",
+    "category": "historical_mapping",
+    "content": "VOY record: VOY, voyage_number, vessel_code, vessel_name, voyage_identifier, pod_code, departure_date, bl_number, service_type, unknown, rotation_number",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "voyage",
+      "source_fields": [
+        "VOY[1]",
+        "VOY[2]",
+        "VOY[3]",
+        "VOY[4]",
+        "VOY[5]",
+        "VOY[6]",
+        "VOY[7]",
+        "VOY[8]",
+        "VOY[9]",
+        "VOY[10]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.068930Z"
+  },
+  {
+    "id": "58262931-18a7-4b0b-bd89-1553398b8c94",
+    "title": "BOL record fields",
+    "category": "historical_mapping",
+    "content": "BOL record: BOL, bol_number, voyage_number, vessel_code, origin_port, origin_port_duplicate, pod_port, pod_port_duplicate, departure_date, empty, movement_type, service_type, empty, empty, lcl_flag, y_or_n, s_or_empty, lcl_lcl, country_of_origin, empty fields, shipper_name, shipper_address, consignee_country, consignee_tax_id, consignee_name, consignee_address, notify_name, notify_address, empty fields, marks_and_numbers, booking_number, description, package_count, package_unit, package_code, container_number, container_size, empty, empty, empty, gross_weight, gross_weight_dup, volume, volume_dup, volume_dup2, empty, incoterm, empty",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "bill_of_lading",
+      "source_fields": [
+        "BOL[1]",
+        "BOL[2]",
+        "BOL[3]",
+        "BOL[4]",
+        "BOL[5]",
+        "BOL[6]",
+        "BOL[7]",
+        "BOL[8]",
+        "BOL[9]",
+        "BOL[10]",
+        "BOL[11]",
+        "BOL[12]",
+        "BOL[13]",
+        "BOL[14]",
+        "BOL[15]",
+        "BOL[16]",
+        "BOL[17]",
+        "BOL[18]",
+        "BOL[19]",
+        "BOL[20]",
+        "BOL[21]",
+        "BOL[22]",
+        "BOL[23]",
+        "BOL[24]",
+        "BOL[25]",
+        "BOL[26]",
+        "BOL[27]",
+        "BOL[28]",
+        "BOL[29]",
+        "BOL[30]",
+        "BOL[31]",
+        "BOL[32]",
+        "BOL[33]",
+        "BOL[34]",
+        "BOL[35]",
+        "BOL[36]",
+        "BOL[37]",
+        "BOL[38]",
+        "BOL[39]",
+        "BOL[40]",
+        "BOL[41]",
+        "BOL[42]",
+        "BOL[43]",
+        "BOL[44]",
+        "BOL[45]",
+        "BOL[46]",
+        "BOL[47]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.070862Z"
+  },
+  {
+    "id": "5bedaf6c-31c8-49aa-bd4a-c90e1887149c",
+    "title": "CTR record fields",
+    "category": "historical_mapping",
+    "content": "CTR record: CTR, container_number, container_size, container_weight, seal_number",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "container",
+      "source_fields": [
+        "CTR[1]",
+        "CTR[2]",
+        "CTR[3]",
+        "CTR[4]",
+        "CTR[5]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.072856Z"
+  },
+  {
+    "id": "f3ce79b6-54fd-472e-8004-db210eca1563",
+    "title": "CON record fields",
+    "category": "historical_mapping",
+    "content": "CON record: CON, sequence_number, marks_and_numbers, description, n_or_y, booking_number, package_count, package_unit, package_code, zero, gross_weight, volume, empty, empty, empty, zero, empty, s_or_empty, empty, zero, zero, empty",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "container_detail",
+      "source_fields": [
+        "CON[1]",
+        "CON[2]",
+        "CON[3]",
+        "CON[4]",
+        "CON[5]",
+        "CON[6]",
+        "CON[7]",
+        "CON[8]",
+        "CON[9]",
+        "CON[10]",
+        "CON[11]",
+        "CON[12]",
+        "CON[13]",
+        "CON[14]",
+        "CON[15]",
+        "CON[16]",
+        "CON[17]",
+        "CON[18]",
+        "CON[19]",
+        "CON[20]",
+        "CON[21]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.074849Z"
+  },
+  {
+    "id": "0f64589a-fa48-439d-b250-e6843522ee9f",
+    "title": "END record structure",
+    "category": "historical_mapping",
+    "content": "END record: END, total_bol_count, total_container_count, system_identifier",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "trailer",
+      "source_fields": [
+        "END[1]",
+        "END[2]",
+        "END[3]",
+        "END[4]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.075846Z"
+  },
+  {
+    "id": "2b86bb69-e7eb-4471-ac68-b7712f8e0396",
+    "title": "Movement type codes",
+    "category": "enum_mapping",
+    "content": "BOL field 11 (movement_type): I = Import, T = Transshipment",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "movement_type",
+      "source_fields": [
+        "BOL[11]"
+      ],
+      "enum_map": {
+        "I": "Import",
+        "T": "Transshipment"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.078836Z"
+  },
+  {
+    "id": "5b79fd93-d46d-4354-ba1d-adc31da02e67",
+    "title": "Service type codes",
+    "category": "enum_mapping",
+    "content": "BOL field 12 (service_type): S = Service, empty = unknown",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "service_type",
+      "source_fields": [
+        "BOL[12]"
+      ],
+      "enum_map": {
+        "S": "Service"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.081829Z"
+  },
+  {
+    "id": "a4666b7f-19d0-46e9-8cba-817703fad73c",
+    "title": "LCL flag",
+    "category": "enum_mapping",
+    "content": "BOL field 15: L = LCL (Less than Container Load), other values unknown",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "lcl_flag",
+      "source_fields": [
+        "BOL[15]"
+      ],
+      "enum_map": {
+        "L": "LCL"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.084819Z"
+  },
+  {
+    "id": "16edc54b-5fbf-4359-b241-f9b8d7fc5e47",
+    "title": "Y/N indicator",
+    "category": "enum_mapping",
+    "content": "BOL field 16: Y = Yes, N = No",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "y_n_indicator",
+      "source_fields": [
+        "BOL[16]"
+      ],
+      "enum_map": {
+        "Y": "Yes",
+        "N": "No"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.087811Z"
+  },
+  {
+    "id": "dfbed004-29d4-466c-8273-df1cf953101d",
+    "title": "S indicator",
+    "category": "enum_mapping",
+    "content": "BOL field 17: S = something, empty = unknown. Also CON field 18: S = something",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "s_indicator",
+      "source_fields": [
+        "BOL[17]",
+        "CON[18]"
+      ],
+      "enum_map": {
+        "S": "S"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.089803Z"
+  },
+  {
+    "id": "804d35d4-45a5-4ff2-80d4-7561f2ea6eaa",
+    "title": "LCL/LCL indicator",
+    "category": "fixed_value_rule",
+    "content": "BOL field 18 is always 'LCL/LCL' in this sample",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "lcl_lcl",
+      "source_fields": [
+        "BOL[18]"
+      ],
+      "fixed_value": "LCL/LCL",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.091792Z"
+  },
+  {
+    "id": "a208a725-1bb2-4a1f-a2df-f2f798c800c5",
+    "title": "Country of origin codes",
+    "category": "enum_mapping",
+    "content": "BOL field 19: IN = India, AE = United Arab Emirates",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "country_of_origin",
+      "source_fields": [
+        "BOL[19]"
+      ],
+      "enum_map": {
+        "IN": "India",
+        "AE": "United Arab Emirates"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.093790Z"
+  },
+  {
+    "id": "1f6a311a-d1a4-4e23-b443-8febda723684",
+    "title": "Consignee tax ID pattern",
+    "category": "business_context",
+    "content": "BOL field 24 (consignee_tax_id) appears as D9999 or T9999, likely a placeholder or tax registration number",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "consignee_tax_id",
+      "source_fields": [
+        "BOL[24]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.095783Z"
+  },
+  {
+    "id": "dac75085-c2cb-4f85-a4eb-2e9a5e4d3a6c",
+    "title": "Package unit codes",
+    "category": "enum_mapping",
+    "content": "Package unit codes: PKG = Packages, CTN = Cartons, BOX = Boxes, BAL = Bales",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "package_code",
+      "source_fields": [
+        "BOL[35]",
+        "CON[9]"
+      ],
+      "enum_map": {
+        "PKG": "Packages",
+        "CTN": "Cartons",
+        "BOX": "Boxes",
+        "BAL": "Bales"
+      },
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.097776Z"
+  },
+  {
+    "id": "09d083f9-5708-4b70-811a-94dacad58bfa",
+    "title": "Container size mapping",
+    "category": "fixed_value_rule",
+    "content": "Container size in CTR record is '5' which likely means 20ft container (standard code)",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "container_size",
+      "source_fields": [
+        "CTR[3]"
+      ],
+      "fixed_value": "5",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.099769Z"
+  },
+  {
+    "id": "f46d3c67-08a5-4227-82c1-cb941f4ed9ad",
+    "title": "CON sequence number",
+    "category": "fixed_value_rule",
+    "content": "CON field 1 (sequence_number) is always '1' in this sample",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "sequence_number",
+      "source_fields": [
+        "CON[1]"
+      ],
+      "fixed_value": "1",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.101760Z"
+  },
+  {
+    "id": "a5b23ee1-5940-48e9-b907-b00767436721",
+    "title": "CON N indicator",
+    "category": "fixed_value_rule",
+    "content": "CON field 5 is always 'N' in this sample",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "n_indicator",
+      "source_fields": [
+        "CON[5]"
+      ],
+      "fixed_value": "N",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.103753Z"
+  },
+  {
+    "id": "8e0a88ae-974a-4ffc-899f-86ba0b8edda0",
+    "title": "CON zero fields",
+    "category": "fixed_value_rule",
+    "content": "CON fields 10, 16, 20, 21 are always '0' in this sample",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "zero_fields",
+      "source_fields": [
+        "CON[10]",
+        "CON[16]",
+        "CON[20]",
+        "CON[21]"
+      ],
+      "fixed_value": "0",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.105747Z"
+  },
+  {
+    "id": "061bf7e2-e407-4095-98ae-6cbce15a4e4e",
+    "title": "Incoterm CIF",
+    "category": "fixed_value_rule",
+    "content": "BOL field 46 (incoterm) is always 'CIF' in this sample",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "incoterm",
+      "source_fields": [
+        "BOL[46]"
+      ],
+      "fixed_value": "CIF",
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.108737Z"
+  },
+  {
+    "id": "2e65b4f4-bb68-4263-b62a-17d15c4cfccd",
+    "title": "Booking number pattern",
+    "category": "business_context",
+    "content": "Booking number (BOL field 32) is '770000' for all records in this sample",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "booking_number",
+      "source_fields": [
+        "BOL[32]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.110731Z"
+  },
+  {
+    "id": "1ad5d6de-4f8d-404a-9253-439f844e1e46",
+    "title": "Container number pattern",
+    "category": "business_context",
+    "content": "Container number in BOL field 36 and CTR field 2 is 'TIIU553457' for all records",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "container_number",
+      "source_fields": [
+        "BOL[36]",
+        "CTR[2]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.112724Z"
+  },
+  {
+    "id": "66e064c4-0ec6-4a66-9c43-597f30cf9194",
+    "title": "Seal number pattern",
+    "category": "business_context",
+    "content": "Seal number in CTR field 5 is '4785668' for all records",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "seal_number",
+      "source_fields": [
+        "CTR[5]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.115714Z"
+  },
+  {
+    "id": "f707916e-f150-4e59-afaa-df04988b5d7f",
+    "title": "Gross weight and volume duplication",
+    "category": "business_context",
+    "content": "BOL fields 41 and 42 both contain gross weight; fields 43, 44, 45 contain volume (duplicated). CON fields 11 and 12 contain gross weight and volume respectively.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "gross_weight_volume",
+      "source_fields": [
+        "BOL[41]",
+        "BOL[42]",
+        "BOL[43]",
+        "BOL[44]",
+        "BOL[45]",
+        "CON[11]",
+        "CON[12]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.117707Z"
+  },
+  {
+    "id": "7c7b4899-d614-44c6-ad4d-072762e2e22f",
+    "title": "Shipper and consignee address format",
+    "category": "business_context",
+    "content": "Address fields (BOL fields 23, 26, 27, 29, 30) contain multi-line addresses with semicolons separating lines. They include company name, street, city, country, phone, email.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "address",
+      "source_fields": [
+        "BOL[23]",
+        "BOL[26]",
+        "BOL[27]",
+        "BOL[29]",
+        "BOL[30]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.119700Z"
+  },
+  {
+    "id": "e885741b-87bc-43f1-bee1-ebfbb3d783a7",
+    "title": "Marks and numbers format",
+    "category": "business_context",
+    "content": "Marks and numbers (BOL field 31, CON field 3) contain container number, seal number, and optional reference like 'OM IMPEX 01 TO 210'",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "marks_and_numbers",
+      "source_fields": [
+        "BOL[31]",
+        "CON[3]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.122691Z"
+  },
+  {
+    "id": "bdabc245-2c2a-44a1-881b-63b8b771bec5",
+    "title": "Description field content",
+    "category": "business_context",
+    "content": "Description (BOL field 33, CON field 4) starts with 'LCL/LCL STC:' followed by cargo description and package count",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "description",
+      "source_fields": [
+        "BOL[33]",
+        "CON[4]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.125682Z"
+  },
+  {
+    "id": "18031f59-adad-469a-8a05-df65f5490679",
+    "title": "Package count and unit",
+    "category": "historical_mapping",
+    "content": "BOL fields 34 and 35 contain package count and unit; CON fields 7 and 8 contain same. Unit is spelled out (e.g., 'PACKAGES') and code (e.g., 'PKG').",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "package_info",
+      "source_fields": [
+        "BOL[34]",
+        "BOL[35]",
+        "CON[7]",
+        "CON[8]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.127674Z"
+  },
+  {
+    "id": "7847eb37-6f43-4875-a938-41d533cb6860",
+    "title": "Container weight in CTR",
+    "category": "business_context",
+    "content": "CTR field 4 (container_weight) is '4.4' for all records, likely tare weight in metric tons",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "container_weight",
+      "source_fields": [
+        "CTR[4]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.130664Z"
+  },
+  {
+    "id": "ec0686e5-4b4f-47e9-bf60-d65af90f0284",
+    "title": "System identifier in END",
+    "category": "business_context",
+    "content": "END field 4 is 'iPack', likely the system that generated the file",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "system_identifier",
+      "source_fields": [
+        "END[4]"
+      ],
+      "source_file": "EDI.FILE.txt",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-06-24T08:46:50.132657Z"
+  }
+]

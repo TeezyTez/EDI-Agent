@@ -1,0 +1,4 @@
+target_field,source_field,category,reason
+genjb_job_number,GFBLRELEASEORDER.JOB_NO,historical_mapping,CNIIN sender reference maps to iFreight business job number.
+cnict_container_number,GFBLRELEASEORDER.CTN_NO,historical_mapping,Container number node should map to container number when present.
+genjbde_nad_postal_code,BSCODE.POST_CODE,historical_mapping,Sender postal code usually maps to address postal code.
