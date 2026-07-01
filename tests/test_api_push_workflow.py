@@ -59,3 +59,17 @@ def test_parse_api_document_explains_free_form_documents_need_deepseek(monkeypat
 
     with pytest.raises(ValueError, match="configure DEEPSEEK_API_KEY"):
         parse_api_document(path)
+
+
+def test_parse_api_document_uses_mimo_for_pdf_when_configured(monkeypatch):
+    def fake_parse(path):
+        return "https://api.example.test/mpci", "POST", [FieldSchema(field_name="blNo")]
+
+    monkeypatch.setattr("app.services.api_push_workflow.MIMO_API_KEY", "test-key")
+    monkeypatch.setattr("app.services.mimo_pdf_parser.parse_api_pdf_with_mimo", fake_parse)
+
+    endpoint, method, fields = parse_api_document("sample_data/target_api_doc.pdf")
+
+    assert endpoint == "https://api.example.test/mpci"
+    assert method == "POST"
+    assert [field.field_name for field in fields] == ["blNo"]

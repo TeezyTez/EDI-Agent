@@ -7,7 +7,7 @@ import pandas as pd
 from docx import Document
 from pypdf import PdfReader
 
-from app.config import DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEEPSEEK_MODEL, GENERATED_DIR, REPORT_DIR, ensure_workspace
+from app.config import DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEEPSEEK_MODEL, GENERATED_DIR, MIMO_API_KEY, REPORT_DIR, ensure_workspace
 from app.models.schema import ApiPushResult, FieldMapping, FieldSchema, MappingStatus
 from app.services.document_parser import _read_table, _to_bool
 from app.services.field_matcher import generate_mapping_table
@@ -393,6 +393,14 @@ def _parse_api_document_with_deepseek(path: str | Path) -> tuple[str, str, list[
 
 def parse_api_document(path: str | Path) -> tuple[str, str, list[FieldSchema]]:
     """Parse target API request documentation into endpoint metadata and fields."""
+    if Path(path).suffix.lower() == ".pdf" and MIMO_API_KEY:
+        try:
+            from app.services.mimo_pdf_parser import parse_api_pdf_with_mimo
+
+            return parse_api_pdf_with_mimo(path)
+        except Exception:
+            pass
+
     try:
         df = _read_document_table(path, API_REQUIRED_COLUMNS, "API", API_COLUMN_ALIASES, min_hits=3)
     except ValueError:

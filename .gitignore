@@ -3,6 +3,7 @@
 __pycache__/
 .pytest_cache/
 *.pyc
+*.log
 
 workspace/uploads/*
 !workspace/uploads/.gitkeep
