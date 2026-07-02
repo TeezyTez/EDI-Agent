@@ -41,16 +41,27 @@ def _select_request_pages(page_texts: list[str], max_pages: int) -> list[int]:
     end = len(page_texts)
     for index, text in enumerate(page_texts):
         normalized = re.sub(r"\s+", " ", text.lower())
-        if "2.4 request message" in normalized or ("request message" in normalized and "api tag" in normalized):
+        is_contents = "contents" in normalized and sum(marker in normalized for marker in ("2.4", "2.5", "3.1", "4.1", "5.1")) >= 3
+        has_request_heading = "request message" in normalized
+        has_field_table = "field name api tag" in normalized or ("api tag" in normalized and "m/o/c" in normalized)
+        is_other_section = any(marker in normalized for marker in ("response message", "attachment api", "vessel master"))
+        if not is_contents and has_request_heading and has_field_table and not is_other_section:
             start = index
             break
+    if start is None:
+        for index, text in enumerate(page_texts):
+            normalized = re.sub(r"\s+", " ", text.lower())
+            is_other_section = any(marker in normalized for marker in ("response message", "attachment api", "vessel master"))
+            if "field name api tag" in normalized and not is_other_section:
+                start = index
+                break
     if start is None:
         return list(range(min(len(page_texts), max_pages)))
 
     for index in range(start + 1, len(page_texts)):
         normalized = re.sub(r"\s+", " ", page_texts[index].lower())
         if any(marker in normalized for marker in ("2.5 sample message", "response message", "web hook", "attachment api")):
-            end = index
+            end = index + 1
             break
     pages = list(range(start, min(end, start + max_pages)))
     return pages or [start]

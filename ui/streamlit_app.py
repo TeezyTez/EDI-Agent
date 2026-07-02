@@ -8,7 +8,7 @@ import streamlit as st
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_DIR))
 
-from app.config import UPLOAD_DIR, ensure_workspace
+from app.config import MIMO_API_KEY, MIMO_BASE_URL, MIMO_MODEL, UPLOAD_DIR, ensure_workspace
 from app.services.api_push_workflow import parse_database_document, run_api_push_mapping_workflow
 from app.services.knowledge_base import add_knowledge_item, ingest_knowledge_file, list_knowledge_items, search_knowledge
 from app.services.mapping_review import export_review_dataframe_excel, mappings_to_review_dataframe, persist_confirmed_mappings
@@ -85,6 +85,11 @@ with tab_api:
     )
     use_llm = st.checkbox("启用 DeepSeek 语义增强", value=False, help="需要在 .env 中配置 DEEPSEEK_API_KEY。未启用时只使用本地规则匹配。")
     llm_max_targets = st.number_input("DeepSeek 最多增强字段数", min_value=1, max_value=200, value=20, step=1)
+    if api_doc is not None and api_doc.name.lower().endswith(".pdf"):
+        if MIMO_API_KEY and MIMO_BASE_URL:
+            st.caption(f"PDF 多模态解析：已启用 MIMO（{MIMO_MODEL}）")
+        else:
+            st.warning("PDF 多模态解析未启用：请在 .env 配置 MIMO_API_KEY/MIMO_BASE_URL 或 VISION_API_KEY/VISION_BASE_URL。当前会回退到文本解析，复杂 PDF 表格容易解析错。")
 
     if st.button("生成接口推送映射", type="primary", disabled=not all([database_doc, api_doc])):
         with st.spinner("正在生成目标接口格式和数据库字段映射文档..."):
