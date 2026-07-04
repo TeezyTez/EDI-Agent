@@ -30,10 +30,14 @@ class FieldSchema(BaseModel):
 
 class FieldMapping(BaseModel):
     source_field: str | None = None
+    source_fields: list[str] = Field(default_factory=list)
     target_field: str
     confidence: float = Field(ge=0.0, le=1.0)
     reason: str
     rule_type: RuleType = RuleType.DIRECT
+    fixed_value: Any = None
+    transform_expression: str | None = None
+    diagnostics_path: str | None = None
     status: MappingStatus
 
 
@@ -64,6 +68,7 @@ class ApiPushResult(BaseModel):
     payload_template_path: str
     mapping_report_path: str
     mapping_review_path: str = ""
+    diagnostics_path: str = ""
     llm_used: bool = False
     llm_message: str = ""
 

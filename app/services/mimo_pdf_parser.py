@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -8,7 +9,7 @@ from typing import Any
 
 from pypdf import PdfReader
 
-from app.config import MIMO_API_KEY, MIMO_BASE_URL, MIMO_MODEL, MIMO_PDF_MAX_PAGES
+from app.config import CACHE_DIR, MIMO_API_KEY, MIMO_BASE_URL, MIMO_MODEL, MIMO_PDF_MAX_PAGES
 from app.models.schema import FieldSchema
 
 
@@ -33,6 +34,14 @@ def _safe_json_loads(content: str) -> dict[str, Any]:
 def _page_texts(path: Path) -> list[str]:
     reader = PdfReader(str(path))
     return [page.extract_text() or "" for page in reader.pages]
+
+
+def _file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _select_request_pages(page_texts: list[str], max_pages: int) -> list[int]:
@@ -138,6 +147,13 @@ def parse_api_pdf_with_mimo(path: str | Path) -> tuple[str, str, list[FieldSchem
     source = Path(path)
     texts = _page_texts(source)
     page_indexes = _select_request_pages(texts, MIMO_PDF_MAX_PAGES)
+    cache_path = CACHE_DIR / f"mimo_api_pdf_{_file_sha256(source)}_{MIMO_MODEL}_{MIMO_PDF_MAX_PAGES}.json"
+    if cache_path.exists():
+        payload = json.loads(cache_path.read_text(encoding="utf-8"))
+        fields = [FieldSchema.model_validate(item) for item in payload.get("fields", [])]
+        if fields:
+            return str(payload.get("endpoint") or "/"), str(payload.get("method") or "POST").upper(), fields
+
     selected_text = "\n\n".join(f"# Page {index + 1}\n{texts[index]}" for index in page_indexes)
     images = _render_pdf_pages(source, page_indexes)
     response = _call_mimo(
@@ -167,6 +183,22 @@ def parse_api_pdf_with_mimo(path: str | Path) -> tuple[str, str, list[FieldSchem
         )
     if not fields:
         raise ValueError("MIMO could not extract API fields from the PDF.")
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(
+        json.dumps(
+            {
+                "source_file": source.name,
+                "model": MIMO_MODEL,
+                "selected_pages": [index + 1 for index in page_indexes],
+                "endpoint": str(response.get("endpoint") or "/"),
+                "method": str(response.get("method") or "POST").upper(),
+                "fields": [field.model_dump(mode="json") for field in fields],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
     return str(response.get("endpoint") or "/"), str(response.get("method") or "POST").upper(), fields
 
 

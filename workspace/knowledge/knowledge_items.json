@@ -1,32 +1,3086 @@
 [
   {
-    "id": "806d6608-c7a8-420e-b804-6653bcdfa95a",
-    "title": "Sample JSON all fields.json LLM extraction failed",
+    "id": "a4eb9778-0e64-4bb8-bd48-2381b0f35511",
+    "title": "filingPartyType",
+    "category": "enum_mapping",
+    "content": "Code for filing party type. 'FF' likely means Freight Forwarder.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "party"
+    ],
+    "metadata": {
+      "target_field": "filingPartyType",
+      "enum_map": {
+        "FF": "Freight Forwarder"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.550313Z"
+  },
+  {
+    "id": "08e03cfa-d592-41bd-9bc7-82699bb0b5db",
+    "title": "filingFor",
+    "category": "enum_mapping",
+    "content": "Indicates who the filing is done for. 'SELF' means filing party is filing for itself.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "party"
+    ],
+    "metadata": {
+      "target_field": "filingFor",
+      "enum_map": {
+        "SELF": "Self"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.554240Z"
+  },
+  {
+    "id": "0f3b8838-f0d8-442a-be67-ee57711b812c",
+    "title": "processingInformation",
+    "category": "enum_mapping",
+    "content": "Processing information code. 'NEG' likely means Negotiable Bill of Lading.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "bl"
+    ],
+    "metadata": {
+      "target_field": "processingInformation",
+      "enum_map": {
+        "NEG": "Negotiable"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.555295Z"
+  },
+  {
+    "id": "f6ed50d6-ae7d-434b-97be-86c3d149007c",
+    "title": "isSplitBl",
+    "category": "enum_mapping",
+    "content": "Indicates if Bill of Lading is split. 0 = No, 1 = Yes.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "boolean"
+    ],
+    "metadata": {
+      "target_field": "isSplitBl",
+      "enum_map": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.556236Z"
+  },
+  {
+    "id": "845ab569-79dc-4f12-bc23-bb6486b3be5b",
+    "title": "furtherConsolidation",
+    "category": "enum_mapping",
+    "content": "Indicates further consolidation allowed. 1 = Yes.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "boolean"
+    ],
+    "metadata": {
+      "target_field": "furtherConsolidation",
+      "enum_map": {
+        "1": "Yes"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.557233Z"
+  },
+  {
+    "id": "f99c7692-377c-4033-87b1-b5a546911dfc",
+    "title": "movementType",
+    "category": "enum_mapping",
+    "content": "Movement type code. '23' might represent CY-CFS or similar. Further context needed.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "logistics"
+    ],
+    "metadata": {
+      "target_field": "movementType",
+      "enum_map": {
+        "23": "Unknown - likely a standard movement type"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.558230Z"
+  },
+  {
+    "id": "ccbed773-6aff-4349-a5d1-6c8a43560e9e",
+    "title": "serviceRequirement",
+    "category": "enum_mapping",
+    "content": "Service requirement code. 1 = Yes (e.g., transport service required).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "boolean"
+    ],
+    "metadata": {
+      "target_field": "serviceRequirement",
+      "enum_map": {
+        "1": "Yes"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.560219Z"
+  },
+  {
+    "id": "ed9c2c97-5677-47a7-b291-1e976b9131b6",
+    "title": "natureOfCargoCode",
+    "category": "enum_mapping",
+    "content": "Nature of cargo code. '9' might indicate general cargo. Need industry standard mapping.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "cargo"
+    ],
+    "metadata": {
+      "target_field": "natureOfCargoCode",
+      "enum_map": {
+        "9": "General Cargo (assumed)"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.561216Z"
+  },
+  {
+    "id": "1c9bb546-32af-43d6-bfda-fa062eb81489",
+    "title": "freightType",
+    "category": "enum_mapping",
+    "content": "Freight payment type. 'P' likely means Prepaid.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "freight"
+    ],
+    "metadata": {
+      "target_field": "freightType",
+      "enum_map": {
+        "P": "Prepaid"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.563211Z"
+  },
+  {
+    "id": "0743b229-f72d-40fc-88ff-efe47f4cc9df",
+    "title": "containerStatus",
+    "category": "enum_mapping",
+    "content": "Container status code. '1' likely means Full.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "container"
+    ],
+    "metadata": {
+      "target_field": "containerStatus",
+      "enum_map": {
+        "1": "Full"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.565203Z"
+  },
+  {
+    "id": "a20b1dee-12c6-4d2d-b50d-0e971e48c337",
+    "title": "shipperSealTp, carrierSealTp, customsSealTp",
+    "category": "enum_mapping",
+    "content": "Seal type codes. '1' may indicate a specific seal type (e.g., bolt seal).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "seal"
+    ],
+    "metadata": {
+      "target_field": [
+        "shipperSealTp",
+        "carrierSealTp",
+        "customsSealTp"
+      ],
+      "enum_map": {
+        "1": "Bolt Seal (assumed)"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.566199Z"
+  },
+  {
+    "id": "d50f30fc-aee6-4ab3-bee3-5bb7409399b0",
+    "title": "handlingInstructions",
+    "category": "enum_mapping",
+    "content": "Handling instructions code. 1 might indicate a standard handling instruction.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "logistics"
+    ],
+    "metadata": {
+      "target_field": "handlingInstructions",
+      "enum_map": {
+        "1": "Standard handling"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.567196Z"
+  },
+  {
+    "id": "dbe36eca-54a4-483f-84bc-ce88fae39285",
+    "title": "isDeleted",
+    "category": "enum_mapping",
+    "content": "Soft delete flag. 'N' = Not deleted, 'Y' = Deleted.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "boolean"
+    ],
+    "metadata": {
+      "target_field": "isDeleted",
+      "enum_map": {
+        "N": "Not Deleted",
+        "Y": "Deleted"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.569189Z"
+  },
+  {
+    "id": "c70ee3f1-6fdf-420e-b5b6-0e9ac05e1ca6",
+    "title": "packageType (equipment level)",
+    "category": "enum_mapping",
+    "content": "Package type code at equipment level. 'CT-CARTON' likely means Carton.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "package"
+    ],
+    "metadata": {
+      "target_field": "packageType",
+      "enum_map": {
+        "CT-CARTON": "Carton"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.571183Z"
+  },
+  {
+    "id": "43faed46-82d8-444b-bde1-8738c627eb91",
+    "title": "packageType (item level)",
+    "category": "enum_mapping",
+    "content": "Package type code at item level. 'CT' likely means Carton (abbreviated).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "package"
+    ],
+    "metadata": {
+      "target_field": "packageType",
+      "enum_map": {
+        "CT": "Carton"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.573180Z"
+  },
+  {
+    "id": "0faa6189-607a-48aa-9e0a-71ea43c0301b",
+    "title": "partySubType",
+    "category": "enum_mapping",
+    "content": "Party subtype code. 'COM' likely means Commercial.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "party"
+    ],
+    "metadata": {
+      "target_field": "partySubType",
+      "enum_map": {
+        "COM": "Commercial"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.575172Z"
+  },
+  {
+    "id": "b8852839-6795-4e92-97b3-209444075616",
+    "title": "contactSubType",
+    "category": "enum_mapping",
+    "content": "Contact subtype code. 'COM' likely means Commercial.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "party"
+    ],
+    "metadata": {
+      "target_field": "contactSubType",
+      "enum_map": {
+        "COM": "Commercial"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.576217Z"
+  },
+  {
+    "id": "4967f313-21fb-4ff6-8d71-d470bbcf9bf0",
+    "title": "temperatureUnit",
+    "category": "enum_mapping",
+    "content": "Temperature unit code. 'CEL' means Celsius.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "enum",
+      "unit"
+    ],
+    "metadata": {
+      "target_field": "temperatureUnit",
+      "enum_map": {
+        "CEL": "Celsius"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.578168Z"
+  },
+  {
+    "id": "8f617977-ba3d-44ab-8b74-72a73a99567d",
+    "title": "blDate format",
+    "category": "transform_rule",
+    "content": "BL date is in ISO 8601 format with time (e.g., '2026-02-25T00:00:00Z'). May need to transform to other date formats.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "date",
+      "transform"
+    ],
+    "metadata": {
+      "target_field": "blDate",
+      "transform_rule": "Convert ISO 8601 to target format if needed",
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.580161Z"
+  },
+  {
+    "id": "f04417ee-f0b3-4442-ab23-725c6f57517e",
+    "title": "mblDate format",
+    "category": "transform_rule",
+    "content": "Master BL date is in date-only format (e.g., '2026-02-25'). No time component.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "date",
+      "transform"
+    ],
+    "metadata": {
+      "target_field": "mblDate",
+      "transform_rule": "Date only, no time",
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.582158Z"
+  },
+  {
+    "id": "1755aca9-fc33-41cd-b5ad-819b89f4c77a",
+    "title": "emirate",
     "category": "business_context",
-    "content": "DeepSeek knowledge extraction failed and rule fallback was used. Error: DEEPSEEK_API_KEY is not configured.",
+    "content": "Emirate code for UAE. 'DU' likely means Dubai.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "location",
+      "uae"
+    ],
+    "metadata": {
+      "target_field": "emirate",
+      "enum_map": {
+        "DU": "Dubai"
+      },
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.584148Z"
+  },
+  {
+    "id": "dc5f533a-ef89-4a0b-b526-d403a94011fb",
+    "title": "countryCode (two-letter)",
+    "category": "business_context",
+    "content": "Two-letter ISO country codes used in party details and items. 'AE' for United Arab Emirates, 'SG' for Singapore.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "location",
+      "country"
+    ],
+    "metadata": {
+      "target_field": "countryCode",
+      "transform_rule": "ISO 3166-1 alpha-2 codes",
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.585145Z"
+  },
+  {
+    "id": "069e0155-e875-497f-b56c-4c47108c2538",
+    "title": "imoClass",
+    "category": "business_context",
+    "content": "IMO dangerous goods class. '1.1' indicates explosives with mass explosion hazard.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "dangerous",
+      "imo"
+    ],
+    "metadata": {
+      "target_field": "imoClass",
+      "transform_rule": "Decimal number representing IMO class/subclass",
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.587136Z"
+  },
+  {
+    "id": "5f50290b-2d26-4d58-96b6-a4763f84714f",
+    "title": "unCode",
+    "category": "business_context",
+    "content": "UN number for dangerous goods. '124' and '12' are example UN numbers.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "dangerous",
+      "un"
+    ],
+    "metadata": {
+      "target_field": "unCode",
+      "transform_rule": "Integer representing UN number",
+      "source_file": "Sample JSON all fields.json",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:34:06.589131Z"
+  },
+  {
+    "id": "df7484d0-eddd-4242-a180-76add0f5b78d",
+    "title": "filingPartyName",
+    "category": "fixed_value_rule",
+    "content": "Fixed value always set to STAR CONCORD LOGISTICS L.L.C",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "filingPartyName",
+      "source_fields": [],
+      "fixed_value": "STAR CONCORD LOGISTICS L.L.C",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.238769Z"
+  },
+  {
+    "id": "3d6fa2bc-c97b-4ad6-b2fb-d1b99eae58af",
+    "title": "filingPartyMpciId",
+    "category": "fixed_value_rule",
+    "content": "Fixed value always set to STCLL00",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "filingPartyMpciId",
+      "source_fields": [],
+      "fixed_value": "STCLL00",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.241756Z"
+  },
+  {
+    "id": "b3eb8138-c728-49c6-8ce0-c835449edb56",
+    "title": "filingPartyType",
+    "category": "fixed_value_rule",
+    "content": "Fixed value FF for freight forwarder. For shipping line or NVOCC, use SL.",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "filingPartyType",
+      "source_fields": [],
+      "fixed_value": "FF",
+      "enum_map": {
+        "ship_line_or_NVOCC": "SL"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.244747Z"
+  },
+  {
+    "id": "53f8e98c-3aa7-47d8-b1af-e5e16cdb9c42",
+    "title": "filingFor",
+    "category": "fixed_value_rule",
+    "content": "Fixed value SELF. Alternatively SHIPPING_LINE or NVOCC when filing on behalf of others.",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "filingFor",
+      "source_fields": [],
+      "fixed_value": "SELF",
+      "enum_map": {
+        "on_behalf_of_ship_line": "SHIPPING_LINE",
+        "on_behalf_of_NVOCC": "NVOCC"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.246740Z"
+  },
+  {
+    "id": "e4c8533a-6b6b-4ec0-af4b-3cf0339b9f9d",
+    "title": "blNo",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.BL_NO",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "blNo",
+      "source_fields": [
+        "GFBL.BL_NO"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.249805Z"
+  },
+  {
+    "id": "ab874aad-2a15-410f-b312-b2c35a4bab75",
+    "title": "mblNo",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.MBL_NO",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "mblNo",
+      "source_fields": [
+        "GFBL.MBL_NO"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.251781Z"
+  },
+  {
+    "id": "3e619f6e-9cca-488c-a504-bf581c2de695",
+    "title": "mblIssuingPartyName",
+    "category": "transform_rule",
+    "content": "Lookup from GFBL.AIRLINE_NM to Customer profile MPCI NM",
+    "tags": [
+      "api_push",
+      "lookup"
+    ],
+    "metadata": {
+      "target_field": "mblIssuingPartyName",
+      "source_fields": [
+        "GFBL.AIRLINE_NM"
+      ],
+      "transform_rule": "Match GFBL.AIRLINE_NM to customer profile MPCI NM",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.260693Z"
+  },
+  {
+    "id": "15c6f07e-e01b-4d20-9292-391541b829ea",
+    "title": "mblIssuingPartyMpciId",
+    "category": "transform_rule",
+    "content": "Lookup from shipping line name (GFBL.AIRLINE_NM) to MPCI code using attached reference table",
+    "tags": [
+      "api_push",
+      "lookup"
+    ],
+    "metadata": {
+      "target_field": "mblIssuingPartyMpciId",
+      "source_fields": [
+        "GFBL.AIRLINE_NM"
+      ],
+      "transform_rule": "Use reference table (Shipping Line Name to MPCI Code)",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.262687Z"
+  },
+  {
+    "id": "705e285b-e7d0-4bf9-a170-8d38e0b0ff3d",
+    "title": "vesselName",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.VSL",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "vesselName",
+      "source_fields": [
+        "GFBL.VSL"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.264684Z"
+  },
+  {
+    "id": "fc9d3ec6-d47c-48e8-a8bb-95c2436b2e0a",
+    "title": "voyageNo",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.VOY",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "voyageNo",
+      "source_fields": [
+        "GFBL.VOY"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.266737Z"
+  },
+  {
+    "id": "e37ecc1b-4aa9-486f-a1f8-5991690a3611",
+    "title": "processingInformation",
+    "category": "enum_mapping",
+    "content": "Mapping: NON=Non-Negotiable, NEG=Negotiable. API expects codes NON or NEG.",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "processingInformation",
+      "source_fields": [],
+      "enum_map": {
+        "NON": "Non-Negotiable",
+        "NEG": "Negotiable"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.270662Z"
+  },
+  {
+    "id": "2a09708c-f1b2-4988-acef-ffcb0c049878",
+    "title": "furtherConsolidation",
+    "category": "enum_mapping",
+    "content": "Mapping: Yes=1, No=0. API expects integer 0 or 1.",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "furtherConsolidation",
+      "source_fields": [],
+      "enum_map": {
+        "YES": "1",
+        "NO": "0"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.275645Z"
+  },
+  {
+    "id": "d2f7efd8-8ba5-4a93-ae57-f26488474411",
+    "title": "portOfAcceptance",
+    "category": "transform_rule",
+    "content": "Concatenation of GFBL.ORGN_CNTY and GFBL.ORGN_CD (no separator)",
+    "tags": [
+      "api_push",
+      "concatenation"
+    ],
+    "metadata": {
+      "target_field": "portOfAcceptance",
+      "source_fields": [
+        "GFBL.ORGN_CNTY",
+        "GFBL.ORGN_CD"
+      ],
+      "transform_rule": "GFBL.ORGN_CNTY + GFBL.ORGN_CD",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.279632Z"
+  },
+  {
+    "id": "828a7425-314e-4ce4-8104-568ff697379b",
+    "title": "portOfLoading",
+    "category": "transform_rule",
+    "content": "Concatenation of GFBL.ORGN_CNTY and GFBL.ORGN_CD (same as portOfAcceptance)",
+    "tags": [
+      "api_push",
+      "concatenation"
+    ],
+    "metadata": {
+      "target_field": "portOfLoading",
+      "source_fields": [
+        "GFBL.ORGN_CNTY",
+        "GFBL.ORGN_CD"
+      ],
+      "transform_rule": "GFBL.ORGN_CNTY + GFBL.ORGN_CD",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.283618Z"
+  },
+  {
+    "id": "b451597e-232b-4f5c-8c18-740a901e7c16",
+    "title": "portOfUnloading",
+    "category": "transform_rule",
+    "content": "Concatenation of GFBL.TO_CNTY and GFBL.TO_CD",
+    "tags": [
+      "api_push",
+      "concatenation"
+    ],
+    "metadata": {
+      "target_field": "portOfUnloading",
+      "source_fields": [
+        "GFBL.TO_CNTY",
+        "GFBL.TO_CD"
+      ],
+      "transform_rule": "GFBL.TO_CNTY + GFBL.TO_CD",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.288003Z"
+  },
+  {
+    "id": "9365951c-8d9b-449d-8922-40838add1db7",
+    "title": "endDestination",
+    "category": "transform_rule",
+    "content": "Concatenation of GFBL.DEST_CNTY and GFBL.DEST_CD",
+    "tags": [
+      "api_push",
+      "concatenation"
+    ],
+    "metadata": {
+      "target_field": "endDestination",
+      "source_fields": [
+        "GFBL.DEST_CNTY",
+        "GFBL.DEST_CD"
+      ],
+      "transform_rule": "GFBL.DEST_CNTY + GFBL.DEST_CD",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.290049Z"
+  },
+  {
+    "id": "6727e7fa-6f4e-46a1-8d72-b50a99fbf292",
+    "title": "emirate",
+    "category": "enum_mapping",
+    "content": "Dropdown of UAE emirate codes: AZ, DU, SH, UQ, AJ, FU, RK",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "emirate",
+      "source_fields": [],
+      "enum_map": {
+        "AZ": "Abu Dhabi",
+        "DU": "Dubai",
+        "SH": "Sharjah",
+        "UQ": "Umm Al Quwain",
+        "AJ": "Ajman",
+        "FU": "Al Fujairah",
+        "RK": "Ras Al Khaimah"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.292044Z"
+  },
+  {
+    "id": "4c598eff-cc41-4fb2-bc8a-23c4002d0133",
+    "title": "movementType",
+    "category": "enum_mapping",
+    "content": "Movement type codes: 23=Import, 24=Transit, 28=Transhipment, 165=FROB",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "movementType",
+      "source_fields": [],
+      "enum_map": {
+        "23": "Import",
+        "24": "Transit",
+        "28": "Transhipment",
+        "165": "FROB"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.294035Z"
+  },
+  {
+    "id": "e5a2b387-c59f-4b41-812d-230e9d748b81",
+    "title": "shipperPartyDetails.partyName",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.SHPR_NM",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "shipperPartyDetails.partyName",
+      "source_fields": [
+        "GFBL.SHPR_NM"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.296031Z"
+  },
+  {
+    "id": "36e05fe9-1ffd-4b50-bf49-909d751625e1",
+    "title": "shipperPartyDetails.address",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.SHPR_ADDR",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "shipperPartyDetails.address",
+      "source_fields": [
+        "GFBL.SHPR_ADDR"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.297966Z"
+  },
+  {
+    "id": "9d23b7c8-c592-4c32-b07c-2b36efa1caa3",
+    "title": "shipperPartyDetails.city",
+    "category": "historical_mapping",
+    "content": "Mapping from GFBL.ORGN_CD (free text field)",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "shipperPartyDetails.city",
+      "source_fields": [
+        "GFBL.ORGN_CD"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.300954Z"
+  },
+  {
+    "id": "13eead8c-5f68-4b58-abee-6f041c8add44",
+    "title": "shipperPartyDetails.country",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.ORGN_CNTY",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "shipperPartyDetails.country",
+      "source_fields": [
+        "GFBL.ORGN_CNTY"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.303945Z"
+  },
+  {
+    "id": "2badc09c-86b3-4c17-97ab-4aaba0a58884",
+    "title": "consigneePartyDetails.partyName",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.CNEE_NM",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "consigneePartyDetails.partyName",
+      "source_fields": [
+        "GFBL.CNEE_NM"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.308931Z"
+  },
+  {
+    "id": "7f3620f4-b55d-4b36-bece-2c8572bc749e",
+    "title": "consigneePartyDetails.address",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.CNEE_ADDR",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "consigneePartyDetails.address",
+      "source_fields": [
+        "GFBL.CNEE_ADDR"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.312917Z"
+  },
+  {
+    "id": "f9df2ed3-1074-4c7f-baa4-dbf391852fd1",
+    "title": "consigneePartyDetails.city",
+    "category": "historical_mapping",
+    "content": "Mapping from GFBL.DEST_CD_T (OI) or GFBL.TO_CD (OE) – free text",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "consigneePartyDetails.city",
+      "source_fields": [
+        "GFBL.DEST_CD_T",
+        "GFBL.TO_CD"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.314910Z"
+  },
+  {
+    "id": "0d3abe48-9035-4c35-8dba-0d3719c4e3e1",
+    "title": "consigneePartyDetails.country",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.TO_CNTY",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "consigneePartyDetails.country",
+      "source_fields": [
+        "GFBL.TO_CNTY"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.317900Z"
+  },
+  {
+    "id": "bcacb252-f72d-44c0-9e4f-cac114124cfe",
+    "title": "consigneePartyDetails.contactSubType",
+    "category": "enum_mapping",
+    "content": "Optional field. COM for company, IND for individual.",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "consigneePartyDetails.contactSubType",
+      "source_fields": [],
+      "enum_map": {
+        "COM": "Company",
+        "IND": "Individual"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.321886Z"
+  },
+  {
+    "id": "942324af-7e49-453a-a350-ff028fef46e4",
+    "title": "notifyPartyDetails.partyName",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.NOTY_NM",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "notifyPartyDetails.partyName",
+      "source_fields": [
+        "GFBL.NOTY_NM"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.324877Z"
+  },
+  {
+    "id": "536b5e3a-2319-4b13-8de7-75292edfe375",
+    "title": "notifyPartyDetails.address",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.NOTY_ADDR",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "notifyPartyDetails.address",
+      "source_fields": [
+        "GFBL.NOTY_ADDR"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.330680Z"
+  },
+  {
+    "id": "95046392-27d5-4841-8496-7e2ded670400",
+    "title": "notifyPartyDetails.country",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.TO_CNTY",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "notifyPartyDetails.country",
+      "source_fields": [
+        "GFBL.TO_CNTY"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.334666Z"
+  },
+  {
+    "id": "21a6ebf9-3dc1-4d2d-908d-69aeeb4beb42",
+    "title": "forwardingAgentPartyDetails.partyName",
+    "category": "fixed_value_rule",
+    "content": "Fixed value: STAR CONCORD LOGISTICS L.L.C",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "forwardingAgentPartyDetails.partyName",
+      "source_fields": [],
+      "fixed_value": "STAR CONCORD LOGISTICS L.L.C",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.339651Z"
+  },
+  {
+    "id": "dccb05c1-7fc7-45c5-8637-a1811fd602b9",
+    "title": "forwardingAgentPartyDetails.address",
+    "category": "fixed_value_rule",
+    "content": "Fixed value: JEBEL ALI, DUBAI",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "forwardingAgentPartyDetails.address",
+      "source_fields": [],
+      "fixed_value": "JEBEL ALI, DUBAI",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.343637Z"
+  },
+  {
+    "id": "51f2338b-59a6-4d76-8a5a-d50b6a2e1676",
+    "title": "forwardingAgentPartyDetails.city",
+    "category": "fixed_value_rule",
+    "content": "Fixed value: JEBEL ALI, DUBAI",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "forwardingAgentPartyDetails.city",
+      "source_fields": [],
+      "fixed_value": "JEBEL ALI, DUBAI",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.346627Z"
+  },
+  {
+    "id": "b2f58acf-aed5-4833-9113-215202c792ed",
+    "title": "forwardingAgentPartyDetails.country",
+    "category": "fixed_value_rule",
+    "content": "Fixed value: AE",
+    "tags": [
+      "api_push",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "forwardingAgentPartyDetails.country",
+      "source_fields": [],
+      "fixed_value": "AE",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.349618Z"
+  },
+  {
+    "id": "99a90514-4738-44a3-bf82-bac267944459",
+    "title": "equipmentDetails.equipmentNumber",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.CNT_NO",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.equipmentNumber",
+      "source_fields": [
+        "GFBLCNT.CNT_NO"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.352611Z"
+  },
+  {
+    "id": "ebb41299-3b50-4b73-a580-3553f9a55434",
+    "title": "equipmentDetails.equipmentSize",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.CNT_TYPE (ISO code)",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.equipmentSize",
+      "source_fields": [
+        "GFBLCNT.CNT_TYPE"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.356594Z"
+  },
+  {
+    "id": "04a51acc-df8c-43e8-bef1-5464e23e3019",
+    "title": "equipmentDetails.noOfPackages",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.PKG",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.noOfPackages",
+      "source_fields": [
+        "GFBLCNT.PKG"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.359583Z"
+  },
+  {
+    "id": "7a3dcac8-bbcf-4b8e-a5d5-742d20e1c6f0",
+    "title": "equipmentDetails.packageType",
+    "category": "transform_rule",
+    "content": "Mapping from GFBLCNT.PKG_UNIT – system needs EDI mapping to standard package type codes",
+    "tags": [
+      "api_push",
+      "edi_mapping"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.packageType",
+      "source_fields": [
+        "GFBLCNT.PKG_UNIT"
+      ],
+      "transform_rule": "EDI mapping required (e.g., CT-CARTON)",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.361577Z"
+  },
+  {
+    "id": "66914c60-8f3a-4b52-9f38-b637adfe5531",
+    "title": "equipmentDetails.cargoGrossWt",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.GW",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.cargoGrossWt",
+      "source_fields": [
+        "GFBLCNT.GW"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.364567Z"
+  },
+  {
+    "id": "a0a1a852-8f51-4110-a7a8-8fff19427299",
+    "title": "equipmentDetails.containerStatus",
+    "category": "transform_rule",
+    "content": "IF GFBLCNT.DEP = 'FCL' THEN '0-FCL'; IF 'LCL' THEN '1-LCL'",
+    "tags": [
+      "api_push",
+      "conditional"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.containerStatus",
+      "source_fields": [
+        "GFBLCNT.DEP"
+      ],
+      "transform_rule": "GFBLCNT.DEP == 'FCL' -> '0-FCL'; GFBLCNT.DEP == 'LCL' -> '1-LCL'",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.368555Z"
+  },
+  {
+    "id": "bb6219df-d10d-456e-a2b2-1f8df53f54d0",
+    "title": "equipmentDetails.shipperSeal",
+    "category": "historical_mapping",
+    "content": "Direct mapping from CFBLCNT.SEAL_NO (likely GFBLCNT.SEAL_NO)",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.shipperSeal",
+      "source_fields": [
+        "CFBLCNT.SEAL_NO"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.373538Z"
+  },
+  {
+    "id": "a02b6267-20cb-4094-80b4-c1fa9ad02bb3",
+    "title": "items.hsCode",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.HS_CD (mandatory)",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.hsCode",
+      "source_fields": [
+        "GFBL.HS_CD"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.379517Z"
+  },
+  {
+    "id": "66964997-4883-4032-a28d-16e37ce3340b",
+    "title": "items.noOfPackages",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.PKG",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.noOfPackages",
+      "source_fields": [
+        "GFBLCNT.PKG"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.383504Z"
+  },
+  {
+    "id": "11cf3dce-e118-4189-8d82-0da58d02894a",
+    "title": "items.packageType",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.PKG_UNIT",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.packageType",
+      "source_fields": [
+        "GFBLCNT.PKG_UNIT"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.387492Z"
+  },
+  {
+    "id": "06e1eddb-1f4e-4998-a903-1cec42b4d3c1",
+    "title": "items.cargoGrossWt",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBLCNT.GW",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.cargoGrossWt",
+      "source_fields": [
+        "GFBLCNT.GW"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.390483Z"
+  },
+  {
+    "id": "8644daaf-4075-4afc-b562-ad04390299e3",
+    "title": "items.marksNumbers",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.RMK",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.marksNumbers",
+      "source_fields": [
+        "GFBL.RMK"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.393471Z"
+  },
+  {
+    "id": "801f260d-61ad-4aa4-8198-703f1125a1bc",
+    "title": "items.itemDescription",
+    "category": "historical_mapping",
+    "content": "Direct mapping from GFBL.DESP",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.itemDescription",
+      "source_fields": [
+        "GFBL.DESP"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.397458Z"
+  },
+  {
+    "id": "309732fe-77ec-465b-8188-964a1fb2e989",
+    "title": "items.equipmentNumber",
+    "category": "historical_mapping",
+    "content": "Array of container numbers; mapping from GFBLCNT.CTN_NO (likely CNT_NO)",
+    "tags": [
+      "api_push"
+    ],
+    "metadata": {
+      "target_field": "items.equipmentNumber",
+      "source_fields": [
+        "GFBLCNT.CTN_NO"
+      ],
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.400447Z"
+  },
+  {
+    "id": "93d70334-806d-4887-a1a5-8a813a2dca89",
+    "title": "ISO Container Type Codes",
+    "category": "glossary",
+    "content": "Reference table of ISO container type codes (e.g., 45G1, 22G0) with dimensions and descriptions. Used for equipmentSize field.",
+    "tags": [
+      "api_push",
+      "reference"
+    ],
+    "metadata": {
+      "target_field": "equipmentDetails.equipmentSize",
+      "source_fields": [],
+      "transform_rule": "Use ISO container type code from reference list",
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 1
+    },
+    "created_at": "2026-07-03T07:37:38.404435Z"
+  },
+  {
+    "id": "e330f60f-9446-42e4-91d2-8a3c45872b9d",
+    "title": "Container Type Code to Description Mapping",
+    "category": "enum_mapping",
+    "content": "Maps ISO container type codes to their full descriptions including dimensions and type name. Used for identifying container types in shipping transactions.",
+    "tags": [
+      "api_push",
+      "container",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "containerType",
+      "source_fields": [],
+      "fixed_value": null,
+      "transform_rule": null,
+      "enum_map": {
+        "42R3": "40' x 8'6'' x 8',40' Reefer",
+        "42R9": "40' x 8'6'' x 8',40' Reefer",
+        "42S1": "40' x 8'6'' x 8',40' Automobile Container",
+        "42T2": "40' x 8'6'' x 8',40' Tank",
+        "42T5": "40' x 8'6'' x 8',40' Tank for Dangerous Liquid",
+        "42T6": "40' x 8'6'' x 8',40' Tank for Dangerous Liquid",
+        "42T8": "40' x 8'6'' x 8',40' Tank for Gas",
+        "42U1": "40' x 8'6'' x 8',40' Open Top",
+        "42U6": "40' x 8'6'' x 8',40' Hard Top",
+        "42V0": "40' x 8'6'' x 8',40' Ventilated",
+        "45B3": "40' x 9'6'' x 8',40' BULK CONTAINER",
+        "45G0": "40' x 9'6'' x 8',40' Box (high cube) GP, Non-vented",
+        "45G1": "40' x 9'6'' x 8',40' Box (high cube) GP, Vented",
+        "45P3": "45P3 High Cube Flat Collapsible (40' x 9'6'' x 8')",
+        "45P8": "45P8 High Cube Platform (40' x 9'6'' x 8')",
+        "45R0": "40' x 9'6'' x 8',40' Box, Refrigerated, needs external power",
+        "45R1": "40' x 9'6'' x 8',40' High Cube Reefer",
+        "45R2": "40' x 9'6'' x 8',40' Box, Refrigerated, self powered",
+        "45R3": "40' x 9'6'' x 8',40' Box, Refrigerated & Heated, self powered",
+        "45R9": "40' x 9'6'' x 8',40' High Cube Reefer",
+        "45U1": "40' x 9'6'' x 8',40' High Cube Open Top",
+        "45U6": "40' x 9'6'' x 8',40' High Cube Hard Top",
+        "46H0": "40' x 9'6'' x 8',40' High Cube Insulated",
+        "46P3": "40' x 9'6'' x 8',40' High Cube Flat Collapsible",
+        "48P0": "40' x 4'3'' x 8',40' Platform",
+        "48T8": "40' x 4'3'' x 8',40' Tank for Gas",
+        "48U1": "40' x 4'3'' x 8',40' Open Top",
+        "49P0": "40' x 4'3'' x 8',40' Platform",
+        "4CG0": "40' x 8'6'' x 8'/8'2'',40' Geneal Purpose Container",
+        "L0G1": "45' x 8' x 8',45' High Cube General Purpose, Vented",
+        "L2G1": "45' x 8'6'' x 8',45' High Cube General Purpose, Unvented",
+        "L5G0": "45' x 9'6'' x 8',45' Box (high cube), Non-vented",
+        "L5G1": "45' x 9'6'' x 8',45' Box (high cube), Vented",
+        "L5R0": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "L5R1": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "L5R2": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "L5R3": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "L5R4": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "L5R8": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "L5R9": "45' x 9'6'' x 8',45' High Cube Reefer",
+        "LDG1": "45' x 9' x 8'/8'2'',45' High Cube General Purpose",
+        "LDG8": "45' x 9' x 8'/8'2'',45' High Cube General Purpose",
+        "LEG1": "45' x 9'6'' x 8'/8'2'',45' High Cube Dry",
+        "LEG8": "45' x 9'6'' x 8'/8'2'',45' High Cube General Purpose",
+        "LEG9": "45' x 9'6'' x 8'/8'2'',45' High Cube General Purpose",
+        "LLG1": "45' x 8'6'' x >8'2'',45' General Purpose",
+        "LNG1": "45' x 9'6'' x >8'2'',45' High Cube General Purpose",
+        "LNR1": "45' x 9'6'' x >8'2'',45' High Cube Reefer",
+        "MNG1": "48' x 9'6'' x 8' ,48' Box (high cube), 102\" Wide, Vented",
+        "MPG1": "48' x 9'6'' x 8' ,48' Box (high cube), 102\" Wide, Vented"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 2
+    },
+    "created_at": "2026-07-03T07:37:38.409420Z"
+  },
+  {
+    "id": "cf9233fe-a77d-4194-963b-a4dee11ae8e8",
+    "title": "Country Name to Country Code Mapping",
+    "category": "enum_mapping",
+    "content": "Maps full country names to ISO 3166-1 alpha-2 country codes. Used for country fields in shipping and trade transactions.",
+    "tags": [
+      "api_push",
+      "country",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "countryCode",
+      "source_fields": [],
+      "fixed_value": null,
+      "transform_rule": null,
+      "enum_map": {
+        "Andorra": "AD",
+        "United Arab Emirates": "AE",
+        "Afghanistan": "AF",
+        "Antigua and Barbuda": "AG",
+        "Anguilla": "AI",
+        "Albania": "AL",
+        "Armenia": "AM",
+        "Angola": "AO",
+        "Antarctica": "AQ",
+        "Argentina": "AR",
+        "American Samoa": "AS",
+        "Austria": "AT",
+        "Australia": "AU",
+        "Aruba": "AW",
+        "Åland Islands": "AX",
+        "Azerbaijan": "AZ",
+        "Bosnia and Herzegovina": "BA",
+        "Barbados": "BB",
+        "Bangladesh": "BD",
+        "Belgium": "BE",
+        "Burkina Faso": "BF",
+        "Bulgaria": "BG",
+        "Bahrain": "BH",
+        "Burundi": "BI",
+        "Benin": "BJ",
+        "Saint Barthélemy": "BL",
+        "Bermuda": "BM",
+        "Brunei Darussalam": "BN",
+        "Bolivia (Plurinational State of)": "BO",
+        "Bonaire, Sint Eustatius and Saba": "BQ",
+        "Brazil": "BR",
+        "Bahamas (the)": "BS",
+        "Bhutan": "BT",
+        "Bouvet Island": "BV",
+        "Botswana": "BW",
+        "Belarus": "BY",
+        "Belize": "BZ",
+        "Canada": "CA",
+        "Cocos (Keeling) Islands (the)": "CC",
+        "Congo (the Democratic Republic of the)": "CD",
+        "Central African Republic (the)": "CF",
+        "Congo (the)": "CG",
+        "Switzerland": "CH",
+        "Cote dIvoire": "CI",
+        "Cook Islands (the)": "CK",
+        "Chile": "CL",
+        "Cameroon": "CM",
+        "China": "CN",
+        "Colombia": "CO",
+        "Costa Rica": "CR",
+        "Cuba": "CU",
+        "Cabo Verde": "CV",
+        "Curaçao": "CW",
+        "Christmas Island": "CX",
+        "Cyprus": "CY",
+        "Czechia": "CZ",
+        "Germany": "DE",
+        "Djibouti": "DJ",
+        "Denmark": "DK",
+        "Dominica": "DM",
+        "Dominican Republic (the)": "DO",
+        "Algeria": "DZ",
+        "Ecuador": "EC",
+        "Estonia": "EE",
+        "Egypt": "EG",
+        "Western Sahara": "EH",
+        "Eritrea": "ER",
+        "Spain": "ES",
+        "Ethiopia": "ET",
+        "Finland": "FI",
+        "Fiji": "FJ",
+        "Falkland Islands (the) [Malvinas]": "FK",
+        "Micronesia (Federated States of)": "FM",
+        "Faroe Islands (the)": "FO",
+        "France": "FR",
+        "Gabon": "GA",
+        "United Kingdom of Great Britain and Northern Ireland (the)": "GB",
+        "Grenada": "GD",
+        "Georgia": "GE",
+        "French Guiana": "GF",
+        "Guernsey": "GG",
+        "Ghana": "GH",
+        "Gibraltar": "GI",
+        "Greenland": "GL",
+        "Gambia (the)": "GM",
+        "Guinea": "GN",
+        "Guadeloupe": "GP",
+        "Equatorial Guinea": "GQ",
+        "Greece": "GR",
+        "South Georgia and the South Sandwich Islands": "GS",
+        "Guatemala": "GT",
+        "Guam": "GU",
+        "Guinea-Bissau": "GW",
+        "Guyana": "GY",
+        "Hong Kong": "HK",
+        "Heard Island and McDonald Islands": "HM",
+        "Honduras": "HN",
+        "Croatia": "HR",
+        "Haiti": "HT",
+        "Hungary": "HU",
+        "Indonesia": "ID",
+        "Ireland": "IE",
+        "Israel": "IL",
+        "Isle of Man": "IM",
+        "India": "IN",
+        "British Indian Ocean Territory (the)": "IO",
+        "Iraq": "IQ",
+        "Iran (Islamic Republic of)": "IR",
+        "Iceland": "IS",
+        "Italy": "IT",
+        "Jersey": "JE",
+        "Jamaica": "JM",
+        "Jordan": "JO",
+        "Japan": "JP",
+        "Kenya": "KE",
+        "Kyrgyzstan": "KG",
+        "Cambodia": "KH",
+        "Kiribati": "KI",
+        "Comoros (the)": "KM",
+        "Saint Kitts and Nevis": "KN",
+        "Korea (the Democratic Peoples Republic of)": "KP",
+        "Korea (the Republic of)": "KR",
+        "Kuwait": "KW",
+        "Cayman Islands (the)": "KY",
+        "Kazakhstan": "KZ",
+        "Lao Peoples Democratic Republic (the)": "LA",
+        "Lebanon": "LB",
+        "Saint Lucia": "LC",
+        "Liechtenstein": "LI",
+        "Sri Lanka": "LK",
+        "Liberia": "LR",
+        "Lesotho": "LS",
+        "Lithuania": "LT",
+        "Luxembourg": "LU",
+        "Latvia": "LV",
+        "Libya": "LY",
+        "Morocco": "MA",
+        "Monaco": "MC",
+        "Moldova (the Republic of)": "MD",
+        "Montenegro": "ME",
+        "Saint Martin (French part)": "MF",
+        "Madagascar": "MG",
+        "Marshall Islands (the)": "MH",
+        "Macedonia (the former Yugoslav Republic of)": "MK",
+        "Mali": "ML",
+        "Myanmar": "MM",
+        "Mongolia": "MN",
+        "Macao": "MO",
+        "Northern Mariana Islands (the)": "MP",
+        "Martinique": "MQ",
+        "Mauritania": "MR",
+        "Montserrat": "MS",
+        "Malta": "MT",
+        "Mauritius": "MU",
+        "Maldives": "MV",
+        "Malawi": "MW",
+        "Mexico": "MX",
+        "Malaysia": "MY",
+        "Mozambique": "MZ",
+        "Namibia": "",
+        "New Caledonia": "NC",
+        "Niger (the)": "NE",
+        "Norfolk Island": "NF",
+        "Nigeria": "NG",
+        "Nicaragua": "NI",
+        "Netherlands (the)": "NL",
+        "Norway": "NO",
+        "Nepal": "NP",
+        "Nauru": "NR",
+        "Niue": "NU",
+        "New Zealand": "NZ",
+        "Oman": "OM",
+        "Panama": "PA",
+        "Peru": "PE",
+        "French Polynesia": "PF",
+        "Papua New Guinea": "PG",
+        "Philippines (the)": "PH",
+        "Pakistan": "PK",
+        "Poland": "PL",
+        "Saint Pierre and Miquelon": "PM",
+        "Pitcairn": "PN",
+        "Puerto Rico": "PR",
+        "Palestine, State of": "PS",
+        "Portugal": "PT",
+        "Palau": "PW",
+        "Paraguay": "PY",
+        "Qatar": "QA",
+        "Réunion": "RE",
+        "Romania": "RO",
+        "Serbia": "RS",
+        "Russian Federation (the)": "RU",
+        "Rwanda": "RW",
+        "Saudi Arabia": "SA",
+        "Solomon Islands": "SB",
+        "Seychelles": "SC",
+        "Sudan (the)": "SD",
+        "Sweden": "SE",
+        "Singapore": "SG",
+        "Saint Helena, Ascension and Tristan da Cunha": "SH",
+        "Slovenia": "SI",
+        "Svalbard and Jan Mayen": "SJ",
+        "Slovakia": "SK",
+        "Sierra Leone": "SL",
+        "San Marino": "SM",
+        "Senegal": "SN",
+        "Somalia": "SO",
+        "Suriname": "SR",
+        "South Sudan": "SS",
+        "Sao Tome and Principe": "ST",
+        "El Salvador": "SV",
+        "Sint Maarten (Dutch part)": "SX",
+        "Syrian Arab Republic": "SY",
+        "Eswatini": "SZ",
+        "Turks and Caicos Islands (the)": "TC",
+        "Chad": "TD",
+        "French Southern Territories (the)": "TF",
+        "Togo": "TG",
+        "Thailand": "TH",
+        "Tajikistan": "TJ",
+        "Tokelau": "TK",
+        "Timor-Leste": "TL",
+        "Turkmenistan": "TM",
+        "Tunisia": "TN",
+        "Tonga": "TO",
+        "Turkey": "TR",
+        "Trinidad and Tobago": "TT",
+        "Tuvalu": "TV",
+        "Taiwan (Province of China)": "TW",
+        "Tanzania, United Republic of": "TZ",
+        "Ukraine": "UA",
+        "Uganda": "UG",
+        "United States Minor Outlying Islands (the)": "UM",
+        "United States of America (the)": "US",
+        "Uruguay": "UY",
+        "Uzbekistan": "UZ",
+        "Holy See (the)": "VA",
+        "Saint Vincent and the Grenadines": "VC",
+        "Venezuela (Bolivarian Republic of)": "VE",
+        "Virgin Islands (British)": "VG",
+        "Virgin Islands (U.S.)": "VI",
+        "Viet Nam": "VN",
+        "Vanuatu": "VU",
+        "Wallis and Futuna": "WF",
+        "Samoa": "WS",
+        "Yemen": "YE",
+        "Mayotte": "YT",
+        "South Africa": "ZA",
+        "Zambia": "ZM",
+        "Zimbabwe": "ZW"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 2
+    },
+    "created_at": "2026-07-03T07:37:38.413406Z"
+  },
+  {
+    "id": "fbc68eac-54e4-40ac-aebc-e5d91cbc7d4b",
+    "title": "Package Type Name to Code Mapping",
+    "category": "enum_mapping",
+    "content": "Maps package type descriptions to standardized package type codes (UN/ECE recommendation 21). Used for packaging fields in shipping and logistics data.",
+    "tags": [
+      "api_push",
+      "package",
+      "enum"
+    ],
+    "metadata": {
+      "target_field": "packageType",
+      "source_fields": [],
+      "fixed_value": null,
+      "transform_rule": null,
+      "enum_map": {
+        "Drum, steel": "1A",
+        "Drum, aluminium": "1B",
+        "Drum, plywood": "1D",
+        "Container, flexible": "1F",
+        "Drum, fibre": "1G",
+        "Drum, wooden": "1W",
+        "Barrel, wooden": "2C",
+        "Jerrican, steel": "3A",
+        "Jerrican, plastic": "3H",
+        "Bag, super bulk": "43",
+        "Bag, polybag": "44",
+        "Box, steel": "4A",
+        "Box, aluminium": "4B",
+        "Box, natural wood": "4C",
+        "Box, plywood": "4D",
+        "Box, reconstituted wood": "4F",
+        "Box, fibreboard": "4G",
+        "Box, plastic": "4H",
+        "Bag, woven plastic": "5H",
+        "Bag, textile": "5L",
+        "Bag, paper": "5M",
+        "Composite packaging, plastic receptacle": "6H",
+        "Composite packaging, glass receptacle": "6P",
+        "Case, car": "7A",
+        "Case, wooden": "7B",
+        "Pallet, wooden": "8A",
+        "Crate, wooden": "8B",
+        "Bundle, wooden": "8C",
+        "Intermediate bulk container, rigid plastic": "AA",
+        "Receptacle, fibre": "AB",
+        "Receptacle, paper": "AC",
+        "Receptacle, wooden": "AD",
+        "Aerosol": "AE",
+        "Pallet, modular, collars 80cms * 60cms": "AF",
+        "Pallet, shrinkwrapped": "AG",
+        "Pallet, 100cms * 110cms": "AH",
+        "Clamshell": "AI",
+        "Cone": "AJ",
+        "Ball": "AL",
+        "Ampoule, non-protected": "AM",
+        "Ampoule, protected": "AP",
+        "Atomizer": "AT",
+        "Capsule": "AV",
+        "Belt": "B4",
+        "Barrel": "BA",
+        "Bobbin": "BB",
+        "Bottlecrate / bottlerack": "BC",
+        "Board": "BD",
+        "Bundle": "BE",
+        "Balloon, non-protected": "BF",
+        "Bag": "BG",
+        "Bunch": "BH",
+        "Bin": "BI",
+        "Bucket": "BJ",
+        "Basket": "BK",
+        "Bale, compressed": "BL",
+        "Basin": "BM",
+        "Bale, non-compressed": "BN",
+        "Bottle, non-protected, cylindrical": "BO",
+        "Balloon, protected": "BP",
+        "Bottle, protected cylindrical": "BQ",
+        "Bar": "BR",
+        "Bottle, non-protected, bulbous": "BS",
+        "Bolt": "BT",
+        "Butt": "BU",
+        "Bottle, protected bulbous": "BV",
+        "Box, for liquids": "BW",
+        "Box": "BX",
+        "Board, in bundle/bunch/truss": "BY",
+        "Bars, in bundle/bunch/truss": "BZ",
+        "Can, rectangular": "CA",
+        "Crate, beer": "CB",
+        "Churn": "CC",
+        "Can, with handle and spout": "CD",
+        "Creel": "CE",
+        "Coffer": "CF",
+        "Cage": "CG",
+        "Chest": "CH",
+        "Canister": "CI",
+        "Coffin": "CJ",
+        "Cask": "CK",
+        "Coil": "CL",
+        "Card": "CM",
+        "Container, not otherwise specified as transport equipment": "CN",
+        "Carboy, non-protected": "CO",
+        "Carboy, protected": "CP",
+        "Cartridge": "CQ",
+        "Crate": "CR",
+        "Case": "CS",
+        "Carton": "CT",
+        "Cup": "CU",
+        "Cover": "CV",
+        "Cage, roll": "CW",
+        "Can, cylindrical": "CX",
+        "Cylinder": "CY",
+        "Canvas": "CZ",
+        "Crate, multiple layer, plastic": "DA",
+        "Crate, multiple layer, wooden": "DB",
+        "Crate, multiple layer, cardboard": "DC",
+        "Cage, Commonwealth Handling Equipment Pool (CHEP)": "DG",
+        "Box, Commonwealth Handling Equipment Pool (CHEP), Eurobox": "DH",
+        "Drum, iron": "DI",
+        "Demijohn, non-protected": "DJ",
+        "Crate, bulk, cardboard": "DK",
+        "Crate, bulk, plastic": "DL",
+        "Crate, bulk, wooden": "DM",
+        "Dispenser": "DN",
+        "Demijohn, protected": "DP",
+        "Drum": "DR",
+        "Tray, one layer no cover, plastic": "DS",
+        "Tray, one layer no cover, wooden": "DT",
+        "Tray, one layer no cover, polystyrene": "DU",
+        "Tray, one layer no cover, cardboard": "DV",
+        "Tray, two layers no cover, plastic": "DW",
+        "Tray, two layers no cover, wooden": "DX",
+        "Tray, two layers no cover, cardboard": "DY",
+        "Bag, plastic": "EC",
+        "Case, with pallet base": "ED",
+        "Case, with pallet base, wooden": "EE",
+        "Case, with pallet base, cardboard": "EF",
+        "Case, with pallet base, plastic": "EG",
+        "Case, with pallet base, metal": "EH",
+        "Case, isothermic": "EI",
+        "Envelope": "EN",
+        "Flexibag": "FB",
+        "Crate, fruit": "FC",
+        "Crate, framed": "FD",
+        "Flexitank": "FE",
+        "Firkin": "FI",
+        "Flask": "FL",
+        "Footlocker": "FO",
+        "Filmpack": "FP",
+        "Frame": "FR",
+        "Foodtainer": "FT",
+        "Cart, flatbed": "FW",
+        "Bag, flexible container": "FX",
+        "Bottle, gas": "GB",
+        "Girder": "GI",
+        "Container, gallon": "GL",
+        "Receptacle, glass": "GR",
+        "Tray, containing horizontally stacked flat items": "GU",
+        "Bag, gunny": "GY",
+        "Girders, in bundle/bunch/truss": "GZ",
+        "Basket, with handle, plastic": "HA",
+        "Basket, with handle, wooden": "HB",
+        "Basket, with handle, cardboard": "HC",
+        "Hogshead": "HG",
+        "Hanger": "HN",
+        "Hamper": "HR",
+        "Package, display, wooden": "IA",
+        "Package, display, cardboard": "IB",
+        "Package, display, plastic": "IC",
+        "Package, display, metal": "ID",
+        "Package, show": "IE",
+        "Package, flow": "IF",
+        "Package, paper wrapped": "IG"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 2
+    },
+    "created_at": "2026-07-03T07:37:38.417392Z"
+  },
+  {
+    "id": "fe3bf81d-57e9-4e6d-b354-141bbed79d9f",
+    "title": "Package Type Codes (MPCI)",
+    "category": "enum_mapping",
+    "content": "Mapping from package type code to description as per ARE MPCI specification.",
+    "tags": [
+      "api_push",
+      "mpci",
+      "packaging"
+    ],
+    "metadata": {
+      "target_field": "package_code",
+      "enum_map": {
+        "IG": "rapped? (unclear)",
+        "IH": "Drum, plastic",
+        "IK": "Package, cardboard, with bottle grip-holes",
+        "IL": "Tray, rigid, lidded stackable (CEN TS 14482:2002)",
+        "IN": "Ingot",
+        "IZ": "Ingots, in bundle/bunch/truss",
+        "JB": "Bag, jumbo",
+        "JC": "Jerrican, rectangular",
+        "JG": "Jug",
+        "JR": "Jar",
+        "JT": "Jutebag",
+        "JY": "Jerrican, cylindrical",
+        "KG": "Keg",
+        "KI": "Kit",
+        "LE": "Luggage",
+        "LG": "Log",
+        "LT": "Lot",
+        "LU": "Lug",
+        "LV": "Liftvan",
+        "LZ": "Logs, in bundle/bunch/truss",
+        "MA": "Crate, metal",
+        "MB": "Bag, multiply",
+        "MC": "Crate, milk",
+        "ME": "Container, metal",
+        "MR": "Receptacle, metal",
+        "MS": "Sack, multi-wall",
+        "MT": "Mat",
+        "MW": "Receptacle, plastic wrapped",
+        "MX": "Matchbox",
+        "NE": "Unpacked or unpackaged",
+        "NF": "Unpacked or unpackaged, single unit",
+        "NG": "Unpacked or unpackaged, multiple units",
+        "NS": "Nest",
+        "NT": "Net",
+        "NU": "Net, tube, plastic",
+        "NV": "Net, tube, textile",
+        "OA": "Pallet, CHEP 40 cm x 60 cm",
+        "OB": "Pallet, CHEP 80 cm x 120 cm",
+        "OC": "Pallet, CHEP 100 cm x 120 cm",
+        "OD": "Pallet, AS 4068-1993",
+        "OE": "Pallet, ISO T11",
+        "OF": "Platform, unspecified weight or dimension",
+        "OK": "Block",
+        "OT": "Octabin",
+        "OU": "Container, outer",
+        "OG": "Pallet ISO 0 - 1/2 EURO Pallet",
+        "OH": "Pallet ISO 1 - 1/1 EURO Pallet",
+        "OI": "Pallet ISO 2 – 2/1 EURO Pallet",
+        "OJ": "1/4 EURO Pallet",
+        "OL": "1/8 EURO Pallet",
+        "OM": "Synthetic pallet ISO 1",
+        "ON": "Synthetic pallet ISO 2",
+        "OP": "Wholesaler pallet",
+        "OQ": "Pallet 80 X 100 cm",
+        "OR": "Pallet 60 X 100 cm",
+        "OS": "Oneway pallet",
+        "OV": "Returnable pallet",
+        "OW": "Large bag, pallet sized",
+        "OX": "A wheeled pallet with raised rim (81 x 67 x 135)",
+        "OY": "A Wheeled pallet with raised rim (81 x 72 x 135)",
+        "OZ": "Wheeled pallet with raised rim ( 81 x 60 x 16)",
+        "O1": "Two sided cage on wheels with fixing strap",
+        "O2": "Trolley",
+        "O3": "Oneway pallet ISO 0 - 1/2 EURO Pallet",
+        "O4": "Oneway pallet ISO 1 - 1/1 EURO Pallet",
+        "O5": "Oneway pallet ISO 2 - 2/1 EURO Pallet",
+        "O6": "Pallet with exceptional dimensions",
+        "O7": "Wooden pallet  40 cm x 80 cm",
+        "O8": "Plastic pallet SRS 60 cm x 80 cm",
+        "O9": "Plastic pallet SRS 80 cm x 120 cm",
+        "P1": "CHEP pallet 60 cm x 80 cm",
+        "P3": "LPR pallet 60 cm x 80 cm",
+        "P4": "LPR pallet 80 cm x 120 cm",
+        "P2": "Pan",
+        "PA": "Packet",
+        "PB": "Pallet, box Combined open-ended box and pallet",
+        "PC": "Parcel",
+        "PD": "Pallet, modular, collars 80cms * 100cms",
+        "PE": "Pallet, modular, collars 80cms * 120cms",
+        "PF": "Pen",
+        "PG": "Plate",
+        "PH": "Pitcher",
+        "PI": "Pipe",
+        "PJ": "Punnet",
+        "PK": "Package",
+        "PL": "Pail",
+        "PN": "Plank",
+        "PO": "Pouch",
+        "PP": "Piece",
+        "PR": "Receptacle, plastic",
+        "PT": "Pot",
+        "PU": "Tray",
+        "PV": "Pipes, in bundle/bunch/truss",
+        "PX": "Pallet",
+        "PY": "Plates, in bundle/bunch/truss",
+        "PZ": "Planks, in bundle/bunch/truss",
+        "QA": "Drum, steel, non-removable head",
+        "QB": "Drum, steel, removable head",
+        "QC": "Drum, aluminium, non-removable head",
+        "QD": "Drum, aluminium, removable head",
+        "QF": "Drum, plastic, non-removable head",
+        "QG": "Drum, plastic, removable head",
+        "QH": "Barrel, wooden, bung type",
+        "QJ": "Barrel, wooden, removable head",
+        "QK": "Jerrican, steel, non-removable head",
+        "QL": "Jerrican, steel, removable head",
+        "QM": "Jerrican, plastic, non-removable head",
+        "QN": "Jerrican, plastic, removable head",
+        "QP": "Box, wooden, natural wood, ordinary",
+        "QQ": "Box, wooden, natural wood, with sift proof walls",
+        "QR": "Box, plastic, expanded",
+        "QS": "Box, plastic, solid",
+        "RD": "Rod",
+        "RG": "Ring",
+        "RJ": "Rack, clothing hanger",
+        "RK": "Rack",
+        "RL": "Reel",
+        "RO": "Roll",
+        "RT": "Rednet",
+        "RZ": "Rods, in bundle/bunch/truss",
+        "SA": "Sack",
+        "SB": "Slab",
+        "SC": "Crate, shallow",
+        "SD": "Spindle",
+        "SE": "Sea-chest",
+        "SH": "Sachet",
+        "SI": "Skid",
+        "SK": "Case, skeleton",
+        "SL": "Slipsheet",
+        "SM": "Sheetmetal",
+        "SO": "Spool",
+        "SP": "Sheet, plastic wrapping",
+        "SS": "Case, steel",
+        "ST": "Sheet",
+        "SU": "Suitcase",
+        "SV": "Envelope, steel",
+        "SW": "Shrinkwrapped",
+        "SX": "Set",
+        "SY": "Sleeve",
+        "SZ": "Sheets, in bundle/bunch/truss",
+        "T1": "Tablet",
+        "TB": "Tub",
+        "TC": "Tea-chest",
+        "TD": "Tube, collapsible",
+        "TE": "Tyre",
+        "TG": "Tank container, generic",
+        "TI": "Tierce",
+        "TK": "Tank, rectangular",
+        "TL": "Tub, with lid",
+        "TN": "Tin",
+        "TO": "Tun",
+        "TR": "Trunk",
+        "TS": "Truss",
+        "TT": "Bag, tote",
+        "TU": "Tube",
+        "TV": "Tube, with nozzle",
+        "TW": "Pallet, triwall",
+        "TY": "Tank, cylindrical",
+        "TZ": "Tubes, in bundle/bunch/truss",
+        "UC": "Uncaged",
+        "UN": "Unit",
+        "VA": "Vat",
+        "VG": "Bulk, gas (at 1031 mbar and 15°C)",
+        "VI": "Vial",
+        "VK": "Vanpack",
+        "VL": "Bulk, liquid",
+        "VO": "Bulk, solid, large particles (“nodules”)",
+        "VP": "Vacuum-packed",
+        "VQ": "Bulk, liquefied gas (at abnormal temperature/pressure)",
+        "VN": "Vehicle",
+        "VR": "Bulk, solid, granular particles (“grains”)",
+        "VS": "Bulk, scrap metal",
+        "VY": "Bulk, solid, fine particles (“powders”)",
+        "WA": "Intermediate bulk container",
+        "WB": "Wickerbottle",
+        "WC": "Intermediate bulk container, steel",
+        "WD": "Intermediate bulk container, aluminium",
+        "WF": "Intermediate bulk container, metal",
+        "WG": "Intermediate bulk container, steel, pressurised > 10 kpa",
+        "WH": "Intermediate bulk container, aluminium, pressurised > 10 kpa",
+        "WJ": "Intermediate bulk container, metal, pressure 10 kpa",
+        "WK": "Intermediate bulk container, steel, liquid",
+        "WL": "Intermediate bulk container, aluminium, liquid",
+        "WM": "Intermediate bulk container, metal, liquid",
+        "WN": "Intermediate bulk container, woven plastic, without coat/liner",
+        "WP": "Intermediate bulk container, woven plastic, coated",
+        "WQ": "Intermediate bulk container, woven plastic, with liner",
+        "WR": "Intermediate bulk container, woven plastic, coated and liner",
+        "WS": "Intermediate bulk container, plastic film",
+        "WT": "Intermediate bulk container, textile with out coat/liner",
+        "WU": "Intermediate bulk container, natural wood, with inner liner",
+        "WV": "Intermediate bulk container, textile, coated",
+        "WW": "Intermediate bulk container, textile, with liner",
+        "WX": "Intermediate bulk container, textile, coated and liner",
+        "WY": "Intermediate bulk container, plywood, with inner liner",
+        "WZ": "Intermediate bulk container, reconstituted wood, with inner liner",
+        "XA": "Bag, woven plastic, without inner coat/liner",
+        "XB": "Bag, woven plastic, sift proof",
+        "XC": "Bag, woven plastic, water resistant",
+        "XD": "Bag, plastics film",
+        "XF": "Bag, textile, without inner coat/liner",
+        "XG": "Bag, textile, sift proof",
+        "XH": "Bag, textile, water resistant",
+        "XJ": "Bag, paper, multi-wall",
+        "XK": "Bag, paper, multi-wall, water resistant",
+        "YA": "Composite packaging, plastic receptacle in steel drum",
+        "YB": "Composite packaging, plastic receptacle in steel crate box",
+        "YC": "Composite packaging, plastic receptacle in aluminium drum",
+        "YD": "Composite packaging, plastic receptacle in aluminium crate",
+        "YF": "Composite packaging, plastic receptacle in wooden box",
+        "YG": "Composite packaging, plastic receptacle in plywood drum",
+        "YH": "Composite packaging, plastic receptacle in plywood box",
+        "YJ": "Composite packaging, plastic receptacle in fibre drum",
+        "YK": "Composite packaging, plastic receptacle in fibreboard box",
+        "YL": "Composite packaging, plastic receptacle in plastic drum",
+        "YM": "Composite packaging, plastic receptacle in solid plastic box",
+        "YN": "Composite packaging, glass receptacle in steel drum",
+        "YP": "Composite packaging, glass receptacle in steel crate box",
+        "YQ": "Composite packaging, glass receptacle in aluminium drum",
+        "YR": "Composite packaging, glass receptacle in aluminium crate",
+        "YS": "Composite packaging, glass receptacle in wooden box",
+        "YT": "Composite packaging, glass receptacle in plywood drum",
+        "YV": "Composite packaging, glass receptacle in wickerwork hamper",
+        "YW": "Composite packaging, glass receptacle in fibre drum",
+        "YX": "Composite packaging, glass receptacle in fibreboard box",
+        "YY": "Composite packaging, glass receptacle in expandable plastic pack",
+        "YZ": "Composite packaging, glass receptacle in solid plastic pack",
+        "ZA": "Intermediate bulk container, paper, multi-wall",
+        "ZB": "Bag, large",
+        "ZC": "Intermediate bulk container, paper, multi-wall, water resistant",
+        "ZD": "Intermediate bulk container, rigid plastic, with structural equipment, solids",
+        "ZF": "Intermediate bulk container, rigid plastic, freestanding, solids",
+        "ZG": "Intermediate bulk container, rigid plastic, with structural equipment, pressurised",
+        "ZH": "Intermediate bulk container, rigid plastic, freestanding, pressurised",
+        "ZJ": "Intermediate bulk container, rigid plastic, with structural equipment, liquids",
+        "ZK": "Intermediate bulk container, rigid plastic, freestanding, liquids",
+        "ZL": "Intermediate bulk container, composite, rigid plastic, solids",
+        "ZM": "Intermediate bulk container, composite, flexible plastic, solids",
+        "ZN": "Intermediate bulk container, composite, rigid plastic, pressurised",
+        "ZP": "Intermediate bulk container, composite, flexible plastic, pressurised",
+        "ZQ": "Intermediate bulk container, composite, rigid plastic, liquids",
+        "ZR": "Intermediate bulk container, composite, flexible plastic, liquids",
+        "ZS": "Intermediate bulk container, composite",
+        "ZT": "Intermediate bulk container, fibreboard",
+        "ZU": "Intermediate bulk container, flexible",
+        "ZV": "Intermediate bulk container, metal, other than steel",
+        "ZW": "Intermediate bulk container, natural wood",
+        "ZX": "Intermediate bulk container, plywood",
+        "ZY": "Intermediate bulk container, reconstituted wood",
+        "ZZ": "Mutually defined"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 3
+    },
+    "created_at": "2026-07-03T07:37:38.422375Z"
+  },
+  {
+    "id": "16e4ce15-3136-4ea0-ad5b-f5cc891397ca",
+    "title": "Shipping Line Codes (MPCI)",
+    "category": "enum_mapping",
+    "content": "Mapping from SMDG code to MPCI shipping line code.",
+    "tags": [
+      "api_push",
+      "mpci",
+      "shipping_line"
+    ],
+    "metadata": {
+      "target_field": "shipping_line_code",
+      "enum_map": {
+        "MIS": "MISSL00",
+        "MLL": "MLLSL00",
+        "MRC": "MRCSL00",
+        "MSC": "MSCSL00",
+        "MSK": "MSKSL00",
+        "MSS": "MSSSL00",
+        "MTU": "MTUSL00",
+        "MUO": "MUOSL00",
+        "MXN": "MXNSL00",
+        "NAV": "NAVSL00",
+        "NCO": "NCOSL00",
+        "NDS": "NDSSL00",
+        "NGP": "NGPSL00",
+        "NLS": "NLSSL00",
+        "NOR": "NORSL00",
+        "NSL": "NSLSL00",
+        "OAC": "OACSL00",
+        "OBL": "OBLSL00",
+        "TTR": "TTRSL00",
+        "TYS": "TYSSL00",
+        "UAS": "UASSL00",
+        "UFE": "UFESL00",
+        "UFS": "UFSSL00",
+        "WEL": "WELSL00",
+        "WSS": "WSSSL00",
+        "WWL": "WWLSL00",
+        "YML": "YMLSL00",
+        "TIZ": "TIZSL00",
+        "TJS": "TJSSL00",
+        "TMI": "TMISL00",
+        "TOL": "TOLSL00",
+        "TSH": "TSHSL00",
+        "TSL": "TSLSL00",
+        "BSW": "BSWSL00",
+        "CON": "CONSL00",
+        "CSF": "CSFSL00",
+        "CSL": "CSLSL00",
+        "CTL": "CTLSL00",
+        "DBD": "DBDSL00",
+        "DLT": "DLTSL00",
+        "DUE": "DUESL00",
+        "EME": "EMESL00",
+        "EMS": "EMSSL00",
+        "EPC": "EPCSL00",
+        "ESL": "ESLSL00",
+        "FED": "FEDSL00",
+        "FMT": "FMTSL00",
+        "FSA": "FSASL00",
+        "FSS": "FSSSL00",
+        "GEK": "GEKSL00",
+        "GSL": "GSLSL00",
+        "HRC": "HRCSL00",
+        "HTM": "HTMSL00",
+        "MGL": "MGLSL00",
+        "NCL": "NCLSL00",
+        "NPD": "NPDSL00",
+        "NSS": "NSSSL00",
+        "OMC": "OMCSL00",
+        "PAS": "PASSL00",
+        "PDZ": "PDZSL00",
+        "PLV": "PLVSL00"
+      },
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 3
+    },
+    "created_at": "2026-07-03T07:37:38.426362Z"
+  },
+  {
+    "id": "ba238b31-3143-4065-ac50-7a86c0dd2c66",
+    "title": "Shipping Line Code Formation Rule",
+    "category": "transform_rule",
+    "content": "The system code for a shipping line is formed by appending 'SL00' to its three-letter abbreviation (e.g., PNS becomes PNSSL00). This mapping is used in API push integration.",
+    "tags": [
+      "api_push",
+      "shipping_line"
+    ],
+    "metadata": {
+      "target_field": "carrier_system_code",
+      "source_fields": [
+        "carrier_short_code"
+      ],
+      "fixed_value": null,
+      "transform_rule": "Concatenate carrier_short_code with 'SL00' to form carrier_system_code.",
+      "enum_map": null,
+      "source_file": "ARE MPCI Specification.xlsx",
+      "llm_extracted": true,
+      "chunk": 4
+    },
+    "created_at": "2026-07-03T07:37:38.431345Z"
+  },
+  {
+    "id": "f3f1dd9d-cce9-4985-88bf-ea2131402646",
+    "title": "genjb_qjob_job_code fixed value",
+    "category": "fixed_value_rule",
+    "content": "The job code for CNIIN is always 'CNIIN'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "genjb.genjb_qjob_job_code",
+      "source_fields": [],
+      "fixed_value": "CNIIN",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.778243Z"
+  },
+  {
+    "id": "5a92d4c3-17dc-46c8-830a-eb40dfec64f6",
+    "title": "genjb_qsts_code fixed value",
+    "category": "fixed_value_rule",
+    "content": "The status code for a new request is 'REQ' (Requested).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "genjb.genjb_qsts_code",
+      "source_fields": [],
+      "fixed_value": "REQ",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.786217Z"
+  },
+  {
+    "id": "bb279464-abcd-48ae-a07f-08e6814112ba",
+    "title": "genjb_company_id fixed value",
+    "category": "fixed_value_rule",
+    "content": "Company ID is always 1.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "genjb.genjb_company_id",
+      "source_fields": [],
+      "fixed_value": "1",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.792196Z"
+  },
+  {
+    "id": "59579c93-a2b1-4ba0-8229-d9e634d21238",
+    "title": "cni_activity_code fixed value",
+    "category": "fixed_value_rule",
+    "content": "Activity code is always 'IMP' (Import).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "consignment.cni_activity_code",
+      "source_fields": [],
+      "fixed_value": "IMP",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.799173Z"
+  },
+  {
+    "id": "9b42ea69-8d32-4d44-996d-3979b8fc9d93",
+    "title": "cni_status_code fixed value",
+    "category": "fixed_value_rule",
+    "content": "Status code is always 'QUO' (Quotation).",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "consignment.cni_status_code",
+      "source_fields": [],
+      "fixed_value": "QUO",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.804570Z"
+  },
+  {
+    "id": "0b19a8f1-1cb5-49ea-959d-ba3bfef86d14",
+    "title": "cni_traffic_code fixed value",
+    "category": "fixed_value_rule",
+    "content": "Traffic code is always 'GENCAR'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "consignment.cni_traffic_code",
+      "source_fields": [],
+      "fixed_value": "GENCAR",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.809061Z"
+  },
+  {
+    "id": "4971492b-5aea-4ec8-8d33-617aabc4d81b",
+    "title": "qtp type codes fixed values",
+    "category": "fixed_value_rule",
+    "content": "The consignment type codes are always set: qtp0='FORW', qtp1='I', qtp2='M', qtp3='C', qtp4='IMS2', qtp5='F'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "consignment.qtp*",
+      "source_fields": [],
+      "fixed_value": "FORW|I|M|C|IMS2|F",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.814103Z"
+  },
+  {
+    "id": "8c89c29b-4974-44f3-b842-5955c16f469d",
+    "title": "cni_nodes_to_copy fixed list",
+    "category": "fixed_value_rule",
+    "content": "The list of CNI nodes to copy is always 'CNIGEN,CNICP,CNITPPRE,CNIMT,CNITPONC,CNIARCUS,CNIAROTH'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "root.general_info.genjb.cni_nodes_to_copy",
+      "source_fields": [],
+      "fixed_value": "CNIGEN,CNICP,CNITPPRE,CNIMT,CNITPONC,CNIARCUS,CNIAROTH",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.819512Z"
+  },
+  {
+    "id": "54b12d98-3fd7-4247-b0bb-14be6b4f4f25",
+    "title": "genjbop_property GroupStocklines fixed",
+    "category": "fixed_value_rule",
+    "content": "The property 'GroupStocklines' is set to 'no'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "root.general_info.genjb.job_properties.genjbop_property.genjbop_value",
+      "source_fields": [],
+      "fixed_value": "GroupStocklines|no",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.823502Z"
+  },
+  {
+    "id": "887ff7a3-6f24-4ec1-95fc-8f76b8408fa0",
+    "title": "decimal_point fixed value",
+    "category": "fixed_value_rule",
+    "content": "Decimal point character is always '.'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "root.general_info.genjb.decimal_point",
+      "source_fields": [],
+      "fixed_value": ".",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.832143Z"
+  },
+  {
+    "id": "8ca1aadb-2309-4870-89b3-f39a0b475ece",
+    "title": "qcus_code per line item",
+    "category": "fixed_value_rule",
+    "content": "In the sample, qcus_code is always 'T1' for each line item.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "wmsordl3.wmsordst_1_qcus_code",
+      "source_fields": [],
+      "fixed_value": "T1",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.837123Z"
+  },
+  {
+    "id": "76fe4538-5fd2-4336-8478-356e47212b7b",
+    "title": "qsts_code per line item",
+    "category": "fixed_value_rule",
+    "content": "In the sample, qsts_code is always 'FREE' for each line item.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "wmsordl3.wmsordst_1_qsts_code",
+      "source_fields": [],
+      "fixed_value": "FREE",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.844102Z"
+  },
+  {
+    "id": "e52f419d-a70c-478e-8586-77d2ddf1a368",
+    "title": "storage option codes fixed per line",
+    "category": "fixed_value_rule",
+    "content": "Storage option codes are always: 1='CEELNR', 2='CONTAINERNR', 3='PRODUCTDESCR', 5='CUSTDC'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "fixed_value"
+    ],
+    "metadata": {
+      "target_field": "wmsordl3.wmsordst_1_storage_option*",
+      "source_fields": [],
+      "fixed_value": "1=CEELNR,2=CONTAINERNR,3=PRODUCTDESCR,5=CUSTDC",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.849082Z"
+  },
+  {
+    "id": "6abb4248-f5fe-495c-9918-84d215df20b5",
+    "title": "warehouse codes sample values",
+    "category": "business_context",
+    "content": "In the sample, warehouse complex is '72', warehouse 'TBN', warehouse unit 'TBN', and location 'TBN' for all lines. These may be fixed for this integration or configurable.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "business_context"
+    ],
+    "metadata": {
+      "target_field": "wmsordl3.wmsordst_1_wmswc_warehouse_complex_code",
+      "source_fields": [],
+      "fixed_value": "72",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.854066Z"
+  },
+  {
+    "id": "84939d39-a08c-478c-90f6-cf224ead3b4f",
+    "title": "cni_description composition",
+    "category": "transform_rule",
+    "content": "cni_description appears to be a concatenation of container and voyage details: 'Inkomende container {vessel} // {vessel_code} // {container_number} // {voyage_number}'.",
+    "tags": [
+      "api_push",
+      "target_sample",
+      "transform_rule"
+    ],
+    "metadata": {
+      "target_field": "consignment.cni_description",
+      "source_fields": [],
+      "transform_rule": "concatenation of vessel name, vessel code, container number, voyage number with ' // ' separator",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 1,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.859049Z"
+  },
+  {
+    "id": "1cbba2d8-659f-4c4d-9e3b-ee5caea83482",
+    "title": "wmsordst_1_storage_option1_code",
+    "category": "fixed_value_rule",
+    "content": "Storage option 1 code set to fixed value 'CEELNR' indicating container/equipment number.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_1_storage_option1_code",
+      "fixed_value": "CEELNR",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.865030Z"
+  },
+  {
+    "id": "4b0f67ca-1b33-4256-98e0-bb649aef8887",
+    "title": "wmsordst_1_storage_option2_code",
+    "category": "fixed_value_rule",
+    "content": "Storage option 2 code set to fixed value 'CONTAINERNR', with the actual container number in wmsordst_1_storage_option2_value.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_1_storage_option2_code",
+      "fixed_value": "CONTAINERNR",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.871010Z"
+  },
+  {
+    "id": "54072a54-068c-45bc-9669-078d6a67c374",
+    "title": "wmsordst_1_storage_option3_code",
+    "category": "fixed_value_rule",
+    "content": "Storage option 3 code set to fixed value 'PRODUCTDESCR', with the product description in wmsordst_1_storage_option3_value.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_1_storage_option3_code",
+      "fixed_value": "PRODUCTDESCR",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.878983Z"
+  },
+  {
+    "id": "f5d78e61-9cfa-499b-b53c-82c07703e34b",
+    "title": "wmsordst_1_storage_option5_code",
+    "category": "fixed_value_rule",
+    "content": "Storage option 5 code set to fixed value 'CUSTDC' (customer document code).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_1_storage_option5_code",
+      "fixed_value": "CUSTDC",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.883967Z"
+  },
+  {
+    "id": "268556a0-4492-417e-bbf2-67ca915b3c67",
+    "title": "wmsordst_1_qsts_code",
+    "category": "fixed_value_rule",
+    "content": "Stock status code set to fixed value 'FREE' indicating free stock.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_1_qsts_code",
+      "fixed_value": "FREE",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.888951Z"
+  },
+  {
+    "id": "639df174-1b61-44a5-816f-c9b7ce0669df",
+    "title": "wmsordst_1_qcus_code",
+    "category": "fixed_value_rule",
+    "content": "Quality code set to fixed value 'T1'.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_1_qcus_code",
+      "fixed_value": "T1",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.895576Z"
+  },
+  {
+    "id": "1c9372f3-58b2-4b7f-8600-021e20b8d425",
+    "title": "wmsordto_weight_qmus_measure_code",
+    "category": "fixed_value_rule",
+    "content": "Weight unit code set to fixed value 'KGM' (kilogram).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordto_weight_qmus_measure_code",
+      "fixed_value": "KGM",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.900563Z"
+  },
+  {
+    "id": "10925817-d59e-4800-a25f-b28208ad9b5b",
+    "title": "wmsordto_volume_qmus_measure_code",
+    "category": "fixed_value_rule",
+    "content": "Volume unit code set to fixed value 'CBM' (cubic meter).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordto_volume_qmus_measure_code",
+      "fixed_value": "CBM",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.906543Z"
+  },
+  {
+    "id": "e45bcc97-9fff-4969-b2d5-667bae62d9b9",
+    "title": "wmsordst_order_qmus_measure_code",
+    "category": "enum_mapping",
+    "content": "Order quantity unit code: 'IT' for items (e.g., IBC) and 'PCE' for pieces (e.g., CASE).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordst_order_qmus_measure_code",
+      "enum_map": {
+        "IT": "Item",
+        "PCE": "Piece"
+      },
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.912519Z"
+  },
+  {
+    "id": "f627072b-4fff-490a-bcb2-94c7eb164cf7",
+    "title": "qpar_party_code",
+    "category": "fixed_value_rule",
+    "content": "Party code set to fixed value 'CUS' (customer).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "qpar_party_code",
+      "fixed_value": "CUS",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.917504Z"
+  },
+  {
+    "id": "8978cec2-fc42-44f4-9f37-4176d93aa250",
+    "title": "qnbr_number_code",
+    "category": "fixed_value_rule",
+    "content": "Number code set to fixed value 'OLS' (order line number? ).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "qnbr_number_code",
+      "fixed_value": "OLS",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.922486Z"
+  },
+  {
+    "id": "5479a1c5-c2d4-421f-855e-a033dc55a9a4",
+    "title": "qref_custom_reference",
+    "category": "fixed_value_rule",
+    "content": "Custom reference type set to fixed value 'PARTY'.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "qref_custom_reference",
+      "fixed_value": "PARTY",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.928471Z"
+  },
+  {
+    "id": "f5fb2c6a-16c2-44af-a080-4447fdd7ba6c",
+    "title": "qdoc_code",
+    "category": "fixed_value_rule",
+    "content": "Document code set to fixed value 'B/L' (Bill of Lading).",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "qdoc_code",
+      "fixed_value": "B/L",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.934447Z"
+  },
+  {
+    "id": "81b2abba-60ae-4ea8-aa62-09490d80e579",
+    "title": "qloc_location_qual enum",
+    "category": "enum_mapping",
+    "content": "Location qualifier: 'PLO' for Place of Loading, 'PDI' for Place of Discharge.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "qloc_location_qual",
+      "enum_map": {
+        "PLO": "Place of Loading",
+        "PDI": "Place of Discharge"
+      },
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.939431Z"
+  },
+  {
+    "id": "23927853-b62d-4a1f-9f71-72631706ba58",
+    "title": "wmsordl3 structure",
+    "category": "business_context",
+    "content": "Line item container with fields: wmsordl3_line_number, wmsar_article_number, wmsordst_number_order, wmsordst_order_qmus_measure_code, warehouse location codes (wmswc, wmswa, wmswu, wmswl), lot_number_1, serial_number_1, storage options, stock status, quality code, weight and volume totals.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "wmsordl3",
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.945411Z"
+  },
+  {
+    "id": "d6ad92ec-330e-422a-8947-9fbfd4612e4e",
+    "title": "cnipl_locode_location_code ports",
+    "category": "glossary",
+    "content": "UN/LOCODE values: 'XGG' likely for a Chinese port (e.g., Xiamen? but code XGG is not standard; could be a custom code) and 'RTM' for Rotterdam.",
+    "tags": [
+      "api_push",
+      "target_sample"
+    ],
+    "metadata": {
+      "target_field": "cnipl_locode_location_code",
+      "source_fields": [
+        "port codes"
+      ],
+      "source_file": "StarConcord_CNIIN.json",
+      "llm_extracted": true,
+      "chunk": 2,
+      "source_fingerprint": "c1a9cb7f624d650a61deb09af62edd5d0cbe8fc2b4ca2ce4305804e9dcd17147"
+    },
+    "created_at": "2026-07-03T08:35:16.951390Z"
+  },
+  {
+    "id": "a9157e6b-c518-4b8a-bdf2-88f60787afa1",
+    "title": "NLD INT Specification.xlsx LLM extraction failed",
+    "category": "business_context",
+    "content": "DeepSeek knowledge extraction failed and rule fallback was used. Error: 'list' object has no attribute 'get'",
+    "tags": [
+      "api_push",
+      "llm_extraction_failed"
+    ],
+    "metadata": {
+      "source_file": "NLD INT Specification.xlsx",
+      "llm_extraction_failed": true
+    },
+    "created_at": "2026-07-03T08:39:16.694683Z"
+  },
+  {
+    "id": "21f1bec1-8e1d-4180-a5b2-03935cd0452e",
+    "title": "NLD INT Specification ContainerType",
+    "category": "enum_mapping",
+    "content": "Container ISO code reference table:\nISO Container Type Code,,\r\nNEW CODE,L' x W' x H',Container Description\r\n10G1,10' x 8' x 8',10' Dry Container\r\n20B0,20' x 8' x 8',20' Bulk\r\n20B1,20' x 8' x 8',20' Bulk\r\n20B3,20' x 8' x 8',20' Bulk\r\n20B4,20' x 8' x 8',20' Bulk\r\n20B5,20' x 8' x 8',20' Bulk\r\n20B6,20' x 8' x 8',20' Bulk\r\n20G0,20' x 8' x 8',20' GENERAL PURPOSE CONTAINER\r\n20G1,20' x 8' x 8',20' GENERAL PURPOSE CONTAINER\r\n20G2,20' x 8' x 8',20' GENERAL PURPOSE CONTAINER\r\n20G3,20' x 8' x 8',20' GENERAL PURPOSE CONTAINER\r\n20H0 ,20' x 8' x 8',20' Insulated\r\n20H1 ,20' x 8' x 8',20' Insulated\r\n20H2 ,20' x 8' x 8',20' Insulated\r\n20H5 ,20' x 8' x 8',20' Insulated\r\n20H6 ,20' x 8' x 8',20' Insulated \r\n20P1 ,20' x 8' x 8',20' Flat\r\n20P2 ,20' x 8' x 8',20' Flat\r\n20P3 ,20' x 8' x 8',20' Flat Collapsible\r\n20P4 ,20' x 8' x 8',20' Flat Collapsible \r\n20P5 ,20' x 8' x 8',20' Platform Superstructure\r\n20R0,20' x 8' x 8',20' Reefer \r\n20R1,20' x 8' x 8',20' Reefer \r\n20R2,20' x 8' x 8',20' Reefer \r\n20R3,20' x 8' x 8',20' Reefer \r\n20R8,20' x 8' x 8',20' Reefer \r\n20R9,20' x 8' x 8',20' Reefer \r\n20T0 ,20' x 8' x 8',20' TANK CONTAINER\r\n20T1 ,20' x 8' x 8',20' TANK CONTAINER\r\n20T2 ,20' x 8' x 8',20' TANK CONTAINER\r\n20T3 ,20' x 8' x 8',20' Tank for Dangerous Liquid\r\n20T4 ,20' x 8' x 8',20' Tank for Dangerous Liquid\r\n20T5,20' x 8' x 8',20' Tank for Dangerous Liquid \r\n20T6 ,20' x 8' x 8',20' Tank for Dangerous Liquid \r\n20T7 ,20' x 8' x 8',20' Tank for Gas\r\n20T8 ,20' x 8' x 8',20' Tank for Gas\r\n20T9,20' x 8' x 8',20' Tank for Gas\r\n20U0 ,20' x 8' x 8',20' Open Top\r\n20U1 ,20' x 8' x 8',20' Open Top\r\n20U2 ,20' x 8' x 8',20' Open Top\r\n20U3 ,20' x 8' x 8',20' Open Top\r\n20U4 ,20' x 8' x 8',20' Open Top\r\n20U5 ,20' x 8' x 8',20' Open Top\r\n20V0,20' x 8' x 8',20' Ventilated\r\n20V2,20' x 8' x 8',20' Ventilated\r\n20V4,20' x 8' x 8',20' Ventilated\r\n21P1,20' x 8' x 8',20' Flat(Fixed ends)\r\n22B0,20' x 8'6'' x 8',\"20' Bulk, Non-pressurized, hopper type, closed\"\r\n22B1,20' x 8'6'' x 8',\"20' Bulk, Non-pressurized, hopper type, airtight\"\r\n22B3,20' x 8'6'' x 8',\"20' Bulk, Pressurized, horizontal discharge, test pressure 150 kPa\"\r\n22B4,20' x 8'6'' x 8',\"20' Bulk, Pressurized, horizontal discharge, test pressure 265 kPa\"\r\n22B5,20' x 8'6'' x 8',\"20' Bulk, Pressurized, tipping discharge, test pressure 150 kPa\"\r\n22B6,20' x 8'6'' x 8',\"20' Bulk, Pressurized, tipping discharge, test pressure 265 Kpa\"\r\n22G0,20' x 8'6'' x 8',\"20' Box, Non-vented\"\r\n22G1,20' x 8'6'' x 8',\"20' Box, Passive Vents\"\r\n22G2,20' x 8'6'' x 8',20' GENERAL PURPOSE CONTAINER\r\n22G3,20' x 8'6'' x 8',20' GENERAL PURPOSE CONTAINER\r\n22G4,20' x 8'6'' x 8',20' GENERAL PURPOSE CONTAINER\r\n22G8,20' x 8'6'' x 8',20' GENERAL PURPOSE CONTAINER\r\n22G9,20' x 8'6'' x 8',20' GENERAL PURPOSE CONTAINER\r\n22H0 ,20' x 8'6'' x 8',20' Insulated\r\n22H2 ,20' x 8'6'' x 8',20' Insulated \r\n22P0,20' x 8'6'' x 8',20' Flat\r\n22P1 ,20' x 8'6'' x 8',20' Flat\r\n22P2 ,20' x 8'6'' x 8',20' Flat\r\n22P3 ,20' x 8'6'' x 8',20' Flat Collapsible \r\n22P4,20' x 8'6'' x 8',\"20' Flat, Collapsible Posts\"\r\n22P5 ,20' x 8'6'' x 8',20' Platform Superstructure\r\n22P7 ,20' x 8'6'' x 8',20' Platform\r\n22P8 ,20' x 8'6'' x 8',20' Platform\r\n22P9,20' x 8'6'' x 8',20' FLAT (COLLAPSIBLE)\r\n22R0,20' x 8'6'' x 8',20' Reefer \r\n22R1,20' x 8'6'' x 8',20' Reefer \r\n22R2,20' x 8'6'' x 8',\"20' Box, Refrigerated, self powered\"\r\n22R3,20' x 8'6'' x 8',\"20' Box, Refrigerated & Heated, self powered\"\r\n22R7 ,20' x 8'6'' x 8',20' Reefer \r\n22R9 ,20' x 8'6'' x 8',20' Reefer\r\n22S1,20' x 8'6'' x 8',20' NAMED CARGO CONTAINER\r\n22T0 ,20' x 8'6'' x 8',20' Tank\r\n22T1 ,20' x 8'6'' x 8',20' Tank \r\n22T2 ,20' x 8'6'' x 8',20' Tank \r\n22T3 ,20' x 8'6'' x 8',20' Tank for Dangerous Liquid\r\n22T4 ,20' x 8'6'' x 8',20' Tank for Dangerous Liquid \r\n22T5 ,20' x 8'6'' x 8',20' Tank for Dangerous Liquid \r\n22T6 ,20' x 8'6'' x 8',20' Tank for Dangerous Liquid\r\n22T7 ,20' x 8'6'' x 8',20' Tank for Gas\r\n22T8 ,20' x 8'6'' x 8',20' Tank for Gas\r\n22U0,20' x 8'6'' x 8',20' Open Top\r\n22U1 ,20' x 8'6'' x 8',20' Open Top\r\n22U6 ,20' x 8'6'' x 8',20' Hard Top\r\n22V0,20' x 8'6'' x 8',\"20' Box, Ventilated\"\r\n22V2,20' x 8'6'' x 8',20' VENTILATED CONTAINER\r\n22V3,20' x 8'6'' x 8',20' VENTILATED CONTAINER\r\n25G0,20' x 9'6'' x 8',20' GP-CONTAINER OVER-HEIGHT\r\n25R1,20' x 9'6'' x 8',20' High Cube Reefer \r\n26G0,20' x 8'6'' x 8',20' GP-CONTAINER OVER-HEIGHT\r\n26H0 ,20' x 9'6'' x 8',20' High Cube Insulated \r\n26T0 ,20' x 9'6'' x 8',20' High Cube Tank \r\n28P0 ,20' x 4'3'' x 8',20' Platform\r\n28T8,20' x 4'3'' x 8',20' Tank for Gas \r\n28U1 ,20' x 4'3'' x 8',20' Open Top\r\n28V0,20' x 4'3'' x 8',20' VE-HALF-HEIGHT =1448 MM HEIGHT\r\n29P0,,20' PLATFORM\r\n2EG0,20' x 9'6'' x 8'/8'2'',20' High Cube Dry Container\r\n42B0,40' x 8'6'' x 8',40' DRY BULK CONTAINER\r\n42G0,40' x 8'6'' x 8',\"40' Box, Non-vented\"\r\n42G1,40' x 8'6'' x 8',\"40' Box, Passive Vents\"\r\n42G9,40' x 8'6'' x 8',40' Hanger Container\r\n42H0,40' x 8'6'' x 8',40' Insulated  \r\n42P0,40' x 8'6'' x 8',40' Flat\r\n42P1,40' x 8'6'' x 8',\"40' Flat, Solid Fixed Ends\"\r\n42P2,40' x 8'6'' x 8',\"40' Flat, Fixed Posts\"\r\n42P3,40' x 8'6'' x 8',\"40' Flat, Collapsible Solid Ends\"\r\n42P4,40' x 8'6'' x 8',\"40' Flat, Collapsible Posts\"\r\n42P5,40' x 8'6'' x 8',40' OPEN SIDED COTAINER\r\n42P6,40' x 8'6'' x 8',40' FLAT SPACE SAVER\r\n42P8 ,40' x 8'6'' x 8',40' Platform\r\n42P9 ,40' x 8'6'' x 8',40' Platform \r\n42R0 ,40' x 8'6'' x 8',40' Reefer\r\n42R1,40' x 8'6'' x 8',40' Reefer \r\n42R2,40' x 8'6'' x 8',\"40' Box, Refrigerated, self powered\"\r\n42R3 ,40' x 8'6'' x 8',40' Reefer \r\n42R9,40' x 8'6'' x 8',40' Reefer\r\n42S1,40' x 8'6'' x 8',40' Automobile Container\r\n42T2 ,40' x 8'6'' x 8',40' Tank\r\n42T5 ,40' x 8'6'' x 8',40' Tank for Dangerous Liquid \r\n42T6 ,40' x 8'6'' x 8',40' Tank for Dangerous Liquid\r\n42T8 ,40' x 8'6'' x 8',40' Tank for Gas  \r\n42U1,40' x 8'6'' x 8',40' Open Top \r\n42U6 ,40' x 8'6'' x 8',40' Hard Top \r\n42V0,40' x 8'6'' x 8',40' Ventilated \r\n45B3,40' x 9'6'' x 8',40' BULK CONTAINER\r\n45G0,40' x 9'6'' x 8',\"40' Box (high cube) GP, Non-vented\"\r\n45G1,40' x 9'6'' x 8',\"40' Box (high cube) GP, Vented\"\r\n45P3 ,40' x 9'6'' x 8',45P3 High Cube Flat Collapsible (40' x 9'6'' x 8') \r\n45P8 ,40' x 9'6'' x 8',45P8 High Cube Platform (40' x 9'6'' x 8') \r\n45R0,40' x 9'6'' x 8',\"40' Box, Refrigerated, needs external power\"\r\n45R1 ,40' x 9'6'' x 8',40' High Cube Reefer \r\n45R2,40' x 9'6'' x 8',\"40' Box, Refrigerated, self powered\"\r\n45R3,40' x 9'6'' x 8',\"40' Box, Refrigerated & Heated, self powered\"\r\n45R9 ,40' x 9'6'' x 8',40' High Cube Reefer\r\n45U1 ,40' x 9'6'' x 8',40' High Cube Open Top\r\n45U6 ,40' x 9'6'' x 8',40' High Cube Hard Top\r\n46H0 ,40' x 9'6'' x 8',40' High Cube Insulated \r\n46P3 ,40' x 9'6'' x 8',40' High Cube Flat Collapsible \r\n48P0 ,40' x 4'3'' x 8',40' Platform\r\n48T8 ,40' x 4'3'' x 8',40' Tank for Gas\r\n48U1 ,40' x 4'3'' x 8',40' Open Top\r\n49P0 ,40' x 4'3'' x 8',40' Platform\r\n4CG0,40' x 8'6'' x 8'/8'2'',40' Geneal Purpose Container\r\nL0G1,45' x 8' x 8',\"45' High Cube General Purpose, Vented\"\r\nL2G1,45' x 8'6'' x 8',\"45' High Cube General Purpose, Unvented\"\r\nL5G0,45' x 9'6'' x 8',\"45' Box (high cube), Non-vented\"\r\nL5G1,45' x 9'6'' x 8',\"45' Box (high cube), Vented\"\r\nL5R0 ,45' x 9'6'' x 8',45' High Cube Reefer\r\nL5R1 ,45' x 9'6'' x 8',45' High Cube Reefer\r\nL5R2 ,45' x 9'6'' x 8',45' High Cube Reefer\r\nL5R3 ,45' x 9'6'' x 8',45' High Cube Reefer\r\nL5R4 ,45' x 9'6'' x 8',45' High Cube Reefer\r\nL5R8,45' x 9'6'' x 8',45' High Cube Reefer\r\nL5R9 ,45' x 9'6'' x 8',45' High Cube Reefer\r\nLDG1,45' x 9' x 8'/8'2'',45' High Cube General Purpose\r\nLDG8,45' x 9' x 8'/8'2'',45' High Cube General Purpose\r\nLEG1,45' x 9'6'' x 8'/8'2'',45' High Cube Dry \r\nLEG8,45' x 9'6'' x 8'/8'2'',45' High Cube General Purpose \r\nLEG9,45' x 9'6'' x 8'/8'2'',45' High Cube General Purpose \r\nLLG1,45' x 8'6'' x >8'2'',45' General Purpose \r\nLNG1,45' x 9'6'' x >8'2'',45' High Cube General Purpose \r\nLNR1,45' x 9'6'' x >8'2'',45' High Cube Reefer \r\nMNG1,48' x 9'6'' x 8' ,\"48' Box (high cube), 102\"\" Wide, Vented\"\r\nMPG1,48' x 9'6'' x 8' ,\"48' Box (high cube), 102\"\" Wide, Vented\"",
+    "tags": [
+      "api_push",
+      "container_type"
+    ],
+    "metadata": {
+      "source_file": "NLD INT Specification.xlsx",
+      "sheet": "ContainerType"
+    },
+    "created_at": "2026-07-03T08:39:16.922361Z"
+  },
+  {
+    "id": "e3f2913f-ca92-41fd-aced-c2d86c1ff434",
+    "title": "Standard_JSON_for_integration_CNI_v15.json LLM extraction failed",
+    "category": "business_context",
+    "content": "DeepSeek knowledge extraction failed and rule fallback was used. Error: 'list' object has no attribute 'get'",
     "tags": [
       "api_push",
       "target_sample",
       "llm_extraction_failed"
     ],
     "metadata": {
-      "source_file": "Sample JSON all fields.json",
+      "source_file": "Standard_JSON_for_integration_CNI_v15.json",
       "llm_extraction_failed": true
     },
-    "created_at": "2026-07-02T08:46:57.750697Z"
+    "created_at": "2026-07-03T08:52:12.687539Z"
   },
   {
-    "id": "7ec0a2ad-65cd-4f2f-8ff0-bbe3431f7319",
-    "title": "Sample JSON all fields",
+    "id": "11dfa86c-eaa2-4612-8861-b59dd419fd38",
+    "title": "Standard_JSON_for_integration_CNI_v15",
     "category": "business_context",
-    "content": "{\n    \"filingPartyName\": \"Manifest Importer Exporter\",\n    \"filingPartyMpciId\": \"CGDLL00\",\n    \"filingPartyType\": \"FF\",\n    \"filingFor\": \"SELF\",\n    \"blNo\": \"ODEX20260225003\",\n    \"blDate\": \"2026-02-25T00:00:00Z\",\n    \"mblNo\": \"MBLODEX20260225003\",\n    \"mblDate\": \"2026-02-25\",\n    \"issuingPartyName\": null,\n    \"issuingPartyMpciId\": null,\n    \"mblIssuingPartyName\": \"MEDITERRANEAN SHIPPING COMPANY\",\n    \"mblIssuingPartyMpciId\": \"CGDLL00\",\n    \"vesselName\": \"MPCI TEST\",\n    \"voyageNo\": \"001WE\",\n    \"processingInformation\": \"NEG\",\n    \"isSplitBl\": 0,\n    \"originalBlNo\": null,\n    \"furtherConsolidation\": 1,\n    \"consolePartyMpciId\": \"CGDLL00\",\n    \"portOfAcceptance\": \"SGSIN\",\n    \"portOfLoading\": \"SGSIN\",\n    \"portOfUnloading\": \"AEJEA\",\n    \"endDestination\": \"AEJEA\",\n    \"portOfTranshipment\": null,\n    \"emirate\": \"DU\",\n    \"movementType\": \"23\",\n    \"placeOfIssue\": \"INNSA\",\n    \"placeOfFreightPayment\": \"INNSA\",\n    \"serviceRequirement\": 1,\n    \"natureOfCargoCode\": \"9\",\n    \"freightType\": \"P\",\n    \"invoiceAmount\": 10000,\n    \"currency\": \"USD\",\n    \"updateReasonCode\": \"\",\n    \"updateReasonDesc\": \"\",\n    \"updateRemark\": \"\",\n    \"switchBLNum\": null,\n    \"shipperPartyDetails\": {\n        \"partyName\": \"Shipper Name\",\n        \"address\": \"PLOT S10112 JAFZA SOUTH ZONE, PO BOX 18153,Singapore\",\n        \"city\": \"Singpaore\",\n        \"country\": \"SG\",\n        \"taxId\": null\n    },\n    \"consigneePartyDetails\": {\n        \"partyName\": \"Consignee Name\",\n        \"address\": \"Dubai\",\n        \"city\": \"Dubai\",\n        \"country\": \"AE\",\n        \"partySubType\": \"COM\",\n        \"contactName\": \"Test User\",\n        \"emailId\": \"user@odex.co\",\n        \"contactSubType\": \"COM\",\n        \"phoneNumber\": 9920019910,\n        \"taxId\": \"123344\"\n    },\n    \"notifyPartyDetails\": {\n        \"partyName\": \"Notify Name\",\n        \"address\": \"EBEL ALI, DUBAI, UNITED ARAB EMIRATES\",\n        \"city\": \"JEBEL ALI, DUBAI\",\n        \"country\": \"AE\",\n        \"taxId\": null\n    },\n    \"forwardingAgentPartyDetails\": {\n        \"partyName\": \"FF Name\",\n        \"address\": \"JEBEL ALI, DUBAI, UNITED ARAB EMIRATES\",\n        \"city\": \"JEBEL ALI, DUBAI\",\n        \"country\": \"AE\",\n        \"taxId\": null\n    },\n    \"shippingAgentPartyDetails\": {},\n    \"deliveyAgentPartyDetails\": {\n        \"partyName\": \"Delivery Agent\",\n        \"address\": \"JEBEL ALI, DUBAI, UNITED ARAB EMIRATES\",\n        \"city\": \"JEBEL ALI, DUBAI\",\n        \"country\": \"AE\",\n        \"taxId\": null\n    },\n    \"equipmentDetails\": [\n        {\n            \"equipmentNumber\": \"MSDU4529564\",\n            \"equipmentSize\": \"45G1\",\n            \"noOfPackages\": 562,\n            \"packageType\": \"CT-CARTON\",\n            \"containerStatus\": \"1\",\n            \"cargoGrossWt\": 2000,\n            \"containerTareWeight\": 4500,\n            \"vgmWeight\": null,\n            \"shipperSeal\": \"084664\",\n            \"shipperSealTp\": \"1\",\n            \"carrierSeal\": \"0999999\",\n            \"carrierSealTp\": \"1\",\n            \"customsSeal\": \"09011111\",\n            \"customsSealTp\": \"1\",\n            \"sealingPartyName\": \"Custom User\",\n            \"temperature\": 10,\n            \"temperatureUnit\": \"CEL\",\n            \"volumnMtq\": 20,\n            \"newVoyage\": null,\n            \"newParentBL\": null,\n            \"handlingInstructions\": 1,\n            \"isDeleted\": \"N\"\n        },\n        {\n            \"equipmentNumber\": \"MSDU4529565\",\n            \"equipmentSize\": \"45G1\",\n            \"noOfPackages\": 562,\n            \"packageType\": \"CT-CARTON\",\n            \"containerStatus\": \"1\",\n            \"cargoGrossWt\": null,\n            \"containerTareWeight\": null,\n            \"vgmWeight\": null,\n            \"shipperSeal\": \"084664\",\n            \"shipperSealTp\": \"1\",\n            \"carrierSeal\": null,\n            \"carrierSealTp\": null,\n            \"customsSeal\": null,\n            \"customsSealTp\": null,\n            \"sealingPartyName\": null,\n            \"temperature\": null,\n            \"temperatureUnit\": null,\n            \"volumnMtq\": null,\n            \"newVoyage\": null,\n            \"newParentBL\": null,\n            \"isDeleted\": \"N\"\n        }\n    ],\n    \"items\": [\n        {\n            \"hsCode\": \"234567\",\n            \"noOfPackages\": 562,\n            \"packageType\": \"CT\",\n            \"cargoGrossWt\": 4305.09,\n            \"cargoNetWt\": null,\n            \"volume\": 51.89,\n            \"marksNumbers\": \"AS ADDRESSED\",\n            \"markingInstructions\": null,\n            \"itemDescription\": \"SAFETY PRODUCTS\",\n            \"packageDescriptionCode\": null,\n            \"imoClass\": 1.1,\n            \"unCode\": 124,\n            \"countryCode\": null,\n            \"isDeleted\": \"N\",\n            \"equipmentNumber\": [\n                \"MSDU4529564\",\n                \"MSDU4529565\"\n            ]\n        },\n        {\n            \"hsCode\": \"234566\",\n            \"noOfPackages\": 562,\n            \"packageType\": \"CT\",\n            \"cargoGrossWt\": 4305.09,\n            \"cargoNetWt\": null,\n            \"volume\": 51.89,\n            \"marksNumbers\": \"AS ADDRESSED\",\n            \"markingInstructions\": null,\n            \"itemDescription\": \"SAFETY PRODUCTS\",\n            \"packageDescriptionCode\": null,\n            \"imoClass\": 1.1,\n            \"unCode\": 12,\n            \"countryCode\": \"AE\",\n            \"isDeleted\": \"N\",\n            \"equipmentNumber\": [\n                \"MSDU4529564\"\n            ]\n        }\n    ]\n}",
+    "content": "{\n  \"root\": {\n    \"general_info\": {\n      \"genjb\": {\n        \"decimal_point\": \",\",\n        \"numeric_separator\": \".\",\n        \"genjb_comment\": \"Een voorbeeld van vrije comments met een update\",\n        \"genjb_job_number\": \"2017020403\",\n        \"genjb_qjob_job_code\": \"CNIIN\",\n        \"genjb_description\": \"OLS CNI Integration\",\n        \"genjb_qsts_code\": \"REQ\",\n        \"genjb_qstsx_definition\": \"Requested\",\n        \"genjb_company_id\": 5,\n        \"process_date\": \"2017-01-31\",\n        \"cni_nodes_to_copy\": \"CNIGEN,CNICP,CNIEST,CNITPPRE,CNIMT,CNITPONC,CNIARCUS,CNIAROTH\",\n        \"CNI_docs_to_print\": \"CDC0001;\\\\\\\\orwiintra\\\\HP_M401_organi,CDC0007;\\\\\\\\orwiintra\\\\HP_M401_organi\",\n        \"acknowledgement\": \"\",\n        \"destinations\": {\n          \"genjbde\": {\n            \"numbers\": {\n              \"nbr_general\": {\n                \"qnbr_number_code\": \"OLS\",\n                \"qnbrx_definition\": \"OLS Address id\",\n                \"nbr_value\": 41511\n              }\n            }\n          }\n        }\n      }\n    },\n    \"consignment\": {\n      \"cni_description\": \"Demo CNI integration via XML\",\n      \"qtp0_type_0_code\": \"FORW\",\n      \"qtp0x_definition\": \"Consignment\",\n      \"qtp1_type_1_code\": \"U\",\n      \"qtp1x_definition\": \"Outgoing\",\n      \"qtp2_type_2_code\": \"M\",\n      \"qtp2x_definition\": \"Maritime\",\n      \"qtp3_type_3_code\": \"C\",\n      \"qtp3x_definition\": \"Containers\",\n      \"qtp4_type_4_code\": \"N\",\n      \"qtp4x_definition\": \"No IMS integration\",\n      \"qtp5_type_5_code\": \"F\",\n      \"qtp5x_definition\": \"File\",\n      \"cni_traffic_code\": \"GENCAR\",\n      \"cni_status_code\": \"QUO\",\n      \"cni_file_manager\": \"KPO\",\n      \"resources\": {\n        \"other_resource\": {\n          \"other_resource_data\": {\n            \"carriages\": {\n              \"carriages_data\": {\n                \"containers\": {\n                  \"containers_data\": [\n                    {\n                      \"cnict_container_number\": \"<TO BE NOMINATED>\",\n                      \"qcntst_code\": \"22UT\",\n                      \"cnict_heavy_tested\": true,\n                      \"cnict_out_of_gauge_ind\": true,\n                      \"out_of_gauge_info\": {\n                        \"cnictdt\": [\n                          {\n                            \"cnictdt_container_detail_value\": 110,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OH\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OLE\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OLF\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OWL\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OWR\"\n                          }\n                        ]\n                      },\n                      \"addresses\": {\n                        \"addresses_data\": [\n                          {\n                            \"qpar_party_code\": \"CLFP\",\n                            \"cnicp_nad_name1\": \"\",\n                            \"cnicp_nad_name2\": \"\",\n                            \"cnicp_nad_street1\": \"\",\n                            \"cnicp_nad_street2\": \"\",\n                            \"cnicp_nad_postal_code\": \"\",\n                            \"cnicp_nad_location\": \"\",\n                            \"cnicp_nad_country_country_code\": \"\",\n                            \"cnicp_nad_countryx_country_name\": \"\",\n                            \"cnicp_contact_first_name\": \"\",\n                            \"cnicp_contact_middle_name\": \"\",\n                            \"cnicp_contact_last_name\": \"\",\n                            \"cnicp_contact_job_title\": \"\",\n                            \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                            \"cnicp_contact_qtoax_definition\": \"\",\n                            \"cnicp_email_address\": \"\",\n                            \"cnicp_fax_number\": \"\",\n                            \"cnicp_mobile_number\": \"\",\n                            \"cnicp_phone_number\": \"\",\n                            \"cnicp_remarks\": \"\",\n                            \"numbers\": {\n                              \"nbr_general\": [\n                                {\n                                  \"qnbr_number_code\": \"000041511\",\n                                  \"nbr_value\": \"DIGITEK\"\n                                },\n                                {\n                                  \"qnbr_number_code\": \"BTW\",\n                                  \"nbr_value\": \"BE0417186112\"\n                                }\n                              ]\n                            },\n                            \"ref\": {\n                              \"cnire\": [\n                                {\n                                  \"qref_custom_reference\": \"CLOAD\",\n                                  \"cnire_value\": \"7000166479-001\"\n                                },\n                                {\n                                  \"qref_custom_reference\": \"PO\",\n                                  \"cnire_value\": \"7000166479-001\"\n                                }\n                              ]\n                            },\n                            \"handling_instructions\": \"\",\n                            \"dates_and_times\": {\n                              \"cnidt\": [\n                                {\n                                  \"qdtm_date_time_qual\": \"CLFP\",\n                                  \"cnidt_date\": \"2017-02-15\",\n                                  \"cnidt_time\": 150000\n                                },\n                                {\n                                  \"qdtm_date_time_qual\": \"CLDD\",\n                                  \"cnidt_date\": \"2017-02-15\",\n                                  \"cnidt_time\": 150000\n                                }\n                              ]\n                            },\n                            \"communications\": \"\"\n                          },\n                          {\n                            \"qpar_party_code\": \"CUFP\",\n                            \"cnicp_nad_name1\": \"\",\n                            \"cnicp_nad_name2\": \"\",\n                            \"cnicp_nad_street1\": \"\",\n                            \"cnicp_nad_street2\": \"\",\n                            \"cnicp_nad_postal_code\": \"\",\n                            \"cnicp_nad_location\": \"\",\n                            \"cnicp_nad_country_country_code\": \"\",\n                            \"cnicp_nad_countryx_country_name\": \"\",\n                            \"cnicp_contact_first_name\": \"\",\n                            \"cnicp_contact_middle_name\": \"\",\n                            \"cnicp_contact_last_name\": \"\",\n                            \"cnicp_contact_job_title\": \"\",\n                            \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                            \"cnicp_contact_qtoax_definition\": \"\",\n                            \"cnicp_email_address\": \"\",\n                            \"cnicp_fax_number\": \"\",\n                            \"cnicp_mobile_number\": \"\",\n                            \"cnicp_phone_number\": \"\",\n                            \"cnicp_remarks\": \"\",\n                            \"numbers\": {\n                              \"nbr_general\": [\n                                {\n                                  \"qnbr_number_code\": \"000041511\",\n                                  \"nbr_value\": \"DIGITEK\"\n                                },\n                                {\n                                  \"qnbr_number_code\": \"BTW\",\n                                  \"nbr_value\": \"BE0417186112\"\n                                }\n                              ]\n                            },\n                            \"ref\": {\n                              \"cnire\": [\n                                {\n                                  \"qref_custom_reference\": \"CLOAD\",\n                                  \"cnire_value\": \"7000166479-001\"\n                                },\n                                {\n                                  \"qref_custom_reference\": \"PO\",\n                                  \"cnire_value\": \"7000166479-001\"\n                                }\n                              ]\n                            },\n                            \"handling_instructions\": \"\",\n                            \"dates_and_times\": {\n                              \"cnidt\": [\n                                {\n                                  \"qdtm_date_time_qual\": \"CLFP\",\n                                  \"cnidt_date\": \"2017-02-15\",\n                                  \"cnidt_time\": 150000\n                                },\n                                {\n                                  \"qdtm_date_time_qual\": \"CLDD\",\n                                  \"cnidt_date\": \"2017-02-15\",\n                                  \"cnidt_time\": 150000\n                                }\n                              ]\n                            },\n                            \"communications\": \"\"\n                          }\n                        ]\n                      },\n                      \"seals\": {\n                        \"seals_data\": [\n                          {\n                            \"cnictse_issuer\": \"\",\n                            \"cnictse_seal_number\": \"ABC123\"\n                          },\n                          {\n                            \"cnictse_issuer\": \"\",\n                            \"cnictse_seal_number\": \"ABC128\"\n                          }\n                        ]\n                      },\n                      \"ceels\": {\n                        \"ceels_data\": [\n                          {\n                            \"cnicl_prod_code\": \"GENCAR\",\n                            \"cnicl_goods_description\": \"Stopsol Classic Green 6mm\",\n                            \"cnicl_marks_and_numbers\": \"7000166479-001\",\n                            \"cnicl_incoterm_code\": \"CIF\",\n                            \"cnicl_incoterm_location\": \"JEBEL ALI PORT, UAE\",\n                            \"cnicllnk_number_packages_1\": 20,\n                            \"cnicl_nbr_packages_1_qpck_package_code\": \"PX\",\n                            \"cnicllnk_number_packages_2\": 400,\n                            \"cnicl_nbr_packages_2_qpck_package_code\": \"CT\",\n                            \"cnicllnk_number_packages_3\": 0,\n                            \"cnicl_nbr_packages_3_qpck_package_code\": \"\",\n                            \"cnicl_package_tare_weight\": 0.0,\n                            \"cnicl_package_tare_qmus_measure_code\": \"KGM\",\n                            \"cnicl_package_tare_qmusx_definition\": \"Kilogramme\",\n                            \"cnicllnk_gross_weight\": 23632.400,\n                            \"cnicllnk_netto_weight\": 23532.400,\n                            \"cnicl_gross_qmus_measure_code\": \"KGM\",\n                            \"cnicl_netto_qmus_measure_code\": \"KGM\",\n                            \"cnicl_tare_weight_qmus_measure_code\": \"KGM\",\n                            \"cnicllnk_volume\": 0.0,\n                            \"cnicl_volume_qmus_measure_code\": \"\",\n                            \"cnicl_value\": 0.0,\n                            \"cnicl_value_qcux_currency_code\": \"\",\n                            \"cnicl_declared_value_customs\": 0.0,\n                            \"cnicl_customs_value_qcux_currency_code\": \"\",\n                            \"cnicl_origin_country_country_code\": \"BE\",\n                            \"cnicl_provenance_country_country_code\": \"\",\n                            \"cnicl_harmonized_system_code\": 70051080,\n                            \"cnicl_chargeable_weight\": 0.0,\n                            \"cnicl_lot_number\": \"\",\n                            \"cnicl_serial_number\": \"\",\n                            \"cnicl_remarks\": \"\",\n                            \"dim\": \"\",\n                            \"preceding\": \"\",\n                            \"dangerous_cargo\": \"\",\n                            \"cnicl_qcus_code\": \"\",\n                            \"cnicl_article_code\": \"\",\n                            \"cnicl_article_definition\": \"\",\n                            \"addresses\": \"\"\n                          },\n                          {\n                            \"cnicl_prod_code\": \"GENCAR\",\n                            \"cnicl_goods_description\": \"Stopsol Classic Green 6mm\",\n                            \"cnicl_marks_and_numbers\": \"7000166479-001\",\n                            \"cnicl_incoterm_code\": \"CIF\",\n                            \"cnicl_incoterm_location\": \"JEBEL ALI PORT, UAE\",\n                            \"cnicllnk_number_packages_1\": 20,\n                            \"cnicl_nbr_packages_1_qpck_package_code\": \"PX\",\n                            \"cnicllnk_number_packages_2\": 400,\n                            \"cnicl_nbr_packages_2_qpck_package_code\": \"CT\",\n                            \"cnicllnk_number_packages_3\": 0,\n                            \"cnicl_nbr_packages_3_qpck_package_code\": \"\",\n                            \"cnicl_package_tare_weight\": 0.0,\n                            \"cnicl_package_tare_qmus_measure_code\": \"KGM\",\n                            \"cnicl_package_tare_qmusx_definition\": \"Kilogramme\",\n                            \"cnicllnk_gross_weight\": 23632.400,\n                            \"cnicllnk_netto_weight\": 23532.400,\n                            \"cnicl_gross_qmus_measure_code\": \"KGM\",\n                            \"cnicl_netto_qmus_measure_code\": \"KGM\",\n                            \"cnicl_tare_weight_qmus_measure_code\": \"KGM\",\n                            \"cnicllnk_volume\": 0.0,\n                            \"cnicl_volume_qmus_measure_code\": \"\",\n                            \"cnicl_value\": 0.0,\n                            \"cnicl_value_qcux_currency_code\": \"\",\n                            \"cnicl_declared_value_customs\": 0.0,\n                            \"cnicl_customs_value_qcux_currency_code\": \"\",\n                            \"cnicl_origin_country_country_code\": \"BE\",\n                            \"cnicl_provenance_country_country_code\": \"\",\n                            \"cnicl_harmonized_system_code\": 70051080,\n                            \"cnicl_chargeable_weight\": 0.0,\n                            \"cnicl_lot_number\": \"\",\n                            \"cnicl_serial_number\": \"\",\n                            \"cnicl_remarks\": \"\",\n                            \"dim\": \"\",\n                            \"preceding\": \"\",\n                            \"dangerous_cargo\": \"\",\n                            \"cnicl_qcus_code\": \"\",\n                            \"cnicl_article_code\": \"\",\n                            \"cnicl_article_definition\": \"\",\n                            \"addresses\": \"\"\n                          }\n                        ]\n                      }\n                    },\n                    {\n                      \"cnict_container_number\": \"<TO BE NOMINATED>\",\n                      \"qcntst_code\": \"22UT\",\n                      \"cnict_heavy_tested\": true,\n                      \"cnict_out_of_gauge_ind\": true,\n                      \"out_of_gauge_info\": {\n                        \"cnictdt\": [\n                          {\n                            \"cnictdt_container_detail_value\": 110,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OH\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OLE\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OLF\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OWL\"\n                          },\n                          {\n                            \"cnictdt_container_detail_value\": 0,\n                            \"cnictdt_qmus_measure_code\": \"CMT\",\n                            \"qnbr_number_code\": \"OWR\"\n                          }\n                        ]\n                      },\n                      \"addresses\": {\n                        \"addresses_data\": {\n                          \"qpar_party_code\": \"CLFP\",\n                          \"cnicp_nad_name1\": \"\",\n                          \"cnicp_nad_name2\": \"\",\n                          \"cnicp_nad_street1\": \"\",\n                          \"cnicp_nad_street2\": \"\",\n                          \"cnicp_nad_postal_code\": \"\",\n                          \"cnicp_nad_location\": \"\",\n                          \"cnicp_nad_country_country_code\": \"\",\n                          \"cnicp_nad_countryx_country_name\": \"\",\n                          \"cnicp_contact_first_name\": \"\",\n                          \"cnicp_contact_middle_name\": \"\",\n                          \"cnicp_contact_last_name\": \"\",\n                          \"cnicp_contact_job_title\": \"\",\n                          \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                          \"cnicp_contact_qtoax_definition\": \"\",\n                          \"cnicp_email_address\": \"\",\n                          \"cnicp_fax_number\": \"\",\n                          \"cnicp_mobile_number\": \"\",\n                          \"cnicp_phone_number\": \"\",\n                          \"cnicp_remarks\": \"\",\n                          \"numbers\": {\n                            \"nbr_general\": {\n                              \"qnbr_number_code\": \"000041511\",\n                              \"nbr_value\": \"DIGITEK\"\n                            }\n                          },\n                          \"ref\": {\n                            \"cnire\": {\n                              \"qref_custom_reference\": \"CLOAD\",\n                              \"cnire_value\": \"7000166479-002\"\n                            }\n                          },\n                          \"handling_instructions\": \"\",\n                          \"dates_and_times\": {\n                            \"cnidt\": {\n                              \"qdtm_date_time_qual\": \"CLFP\",\n                              \"cnidt_date\": \"2017-02-16\",\n                              \"cnidt_time\": 150000\n                            }\n                          },\n                          \"communications\": \"\"\n                        }\n                      },\n                      \"seals\": {\n                        \"seals_data\": {\n                          \"cnictse_issuer\": \"\",\n                          \"cnictse_seal_number\": \"\"\n                        }\n                      },\n                      \"ceels\": {\n                        \"ceels_data\": {\n                          \"cnicl_prod_code\": \"GENCAR\",\n                          \"cnicl_goods_description\": \"Stopsol Classic Green 6mm\",\n                          \"cnicl_marks_and_numbers\": \"7000166479-002\",\n                          \"cnicl_incoterm_code\": \"CIF\",\n                          \"cnicl_incoterm_location\": \"JEBEL ALI PORT, UAE\",\n                          \"cnicllnk_number_packages_1\": 20,\n                          \"cnicl_nbr_packages_1_qpck_package_code\": \"PX\",\n                          \"cnicllnk_number_packages_2\": 400,\n                          \"cnicl_nbr_packages_2_qpck_package_code\": \"CT\",\n                          \"cnicllnk_number_packages_3\": 0,\n                          \"cnicl_nbr_packages_3_qpck_package_code\": \"\",\n                          \"cnicl_package_tare_weight\": 0.0,\n                          \"cnicl_package_tare_qmus_measure_code\": \"KGM\",\n                          \"cnicl_package_tare_qmusx_definition\": \"Kilogramme\",\n                          \"cnicllnk_gross_weight\": 23632.400,\n                          \"cnicllnk_netto_weight\": 23532.400,\n                          \"cnicl_gross_qmus_measure_code\": \"KGM\",\n                          \"cnicl_netto_qmus_measure_code\": \"KGM\",\n                          \"cnicl_tare_weight_qmus_measure_code\": \"KGM\",\n                          \"cnicllnk_volume\": 0.0,\n                          \"cnicl_volume_qmus_measure_code\": \"\",\n                          \"cnicl_value\": 0.0,\n                          \"cnicl_value_qcux_currency_code\": \"\",\n                          \"cnicl_declared_value_customs\": 0.0,\n                          \"cnicl_customs_value_qcux_currency_code\": \"\",\n                          \"cnicl_origin_country_country_code\": \"BE\",\n                          \"cnicl_provenance_country_country_code\": \"\",\n                          \"cnicl_harmonized_system_code\": 70051080,\n                          \"cnicl_chargeable_weight\": 0.0,\n                          \"cnicl_lot_number\": \"\",\n                          \"cnicl_serial_number\": \"\",\n                          \"cnicl_remarks\": \"\",\n                          \"dim\": \"\",\n                          \"preceding\": \"\",\n                          \"dangerous_cargo\": \"\",\n                          \"cnicl_qcus_code\": \"\",\n                          \"cnicl_article_code\": \"\",\n                          \"cnicl_article_definition\": \"\",\n                          \"addresses\": \"\",\n                          \"wmsordl3\": [\n                            {\n                              \"wmsordl3_line_number\": 1,\n                              \"wmsar_article_number\": \"\",\n                              \"wmsordst_number_order\": 50,\n                              \"wmsordst_order_qmus_measure_code\": \"BAG\",\n                              \"wmsordst_1_wmswc_warehouse_complex_code\": \"\",\n                              \"wmsordst_1_wmswa_warehouse_code\": \"\",\n                              \"wmsordst_1_wmswu_warehouse_unit_code\": \"\",\n                              \"wmsordst_1_wmswl_warehouse_location_code\": \"\",\n                              \"wmsordst_1_lot_number_1\": \"\",\n                              \"wmsordst_1_serial_number_1\": \"\",\n                              \"wmsordst_1_qreg_regime_code\": \"\",\n                              \"wmsordst_1_qcus_code\": \"\",\n                              \"wmsordst_1_storage_option1_code\": \"GRCOF\",\n                              \"wmsordst_1_storage_option1_value\": \"\",\n                              \"wmsordst_1_storage_option2_code\": \"VGRCOF\",\n                              \"wmsordst_1_storage_option2_value\": \"\",\n                              \"wmsordst_1_storage_option3_code\": \"TARE\",\n                              \"wmsordst_1_storage_option3_value\": \"\",\n                              \"wmsordst_1_storage_option4_code\": \"DOC\",\n                              \"wmsordst_1_storage_option4_value\": \"\",\n                              \"wmsordst_1_storage_option5_code\": \"VPK\",\n                              \"wmsordst_1_storage_option5_value\": \"\",\n                              \"wmsordst_1_qsts_code\": \"\",\n                              \"wmsordl1_analytic_1_info\": \"\",\n                              \"wmsordst_weight_of_weigh\": 0.0,\n                              \"wmsordst_reweigh\": 0.0,\n                              \"wmsordto_tot_gross_weight\": 0.0,\n                              \"wmsordto_tot_net_weight\": 0.0,\n                              \"wmsordto_tot_volume\": 0.0,\n                              \"wmsordto_weight_qmus_measure_code\": \"KGM\",\n                              \"wmsordto_volume_qmus_measure_code\": \"CBM\",\n                              \"wmsordst_unicity\": \"FIFO\",\n                              \"wmsordst_calculate_number_order\": false,\n                              \"wmsordst_calculate_number_order_stock\": true,\n                              \"wmsordst_calculate_weights_and_volumes\": true,\n                              \"orderreferences\": {\n                                \"wmsordre\": {\n                                  \"wmsordre_qref_custom_reference\": \"PAANCEEL\",\n                                  \"wmsordre_value\": \"18997\"\n                                }\n                              }\n                            },\n                            {\n                              \"wmsordl3_line_number\": 2,\n                              \"wmsar_article_number\": \"\",\n                              \"wmsordst_number_order\": 100,\n                              \"wmsordst_order_qmus_measure_code\": \"BAG\",\n                              \"wmsordst_1_wmswc_warehouse_complex_code\": \"\",\n                              \"wmsordst_1_wmswa_warehouse_code\": \"\",\n                              \"wmsordst_1_wmswu_warehouse_unit_code\": \"\",\n                              \"wmsordst_1_wmswl_warehouse_location_code\": \"\",\n                              \"wmsordst_1_lot_number_1\": \"\",\n                              \"wmsordst_1_serial_number_1\": \"\",\n                              \"wmsordst_1_qreg_regime_code\": \"\",\n                              \"wmsordst_1_qcus_code\": \"\",\n                              \"wmsordst_1_storage_option1_code\": \"GRCOF\",\n                              \"wmsordst_1_storage_option1_value\": \"\",\n                              \"wmsordst_1_storage_option2_code\": \"VGRCOF\",\n                              \"wmsordst_1_storage_option2_value\": \"\",\n                              \"wmsordst_1_storage_option3_code\": \"TARE\",\n                              \"wmsordst_1_storage_option3_value\": \"\",\n                              \"wmsordst_1_storage_option4_code\": \"DOC\",\n                              \"wmsordst_1_storage_option4_value\": \"\",\n                              \"wmsordst_1_storage_option5_code\": \"VPK\",\n                              \"wmsordst_1_storage_option5_value\": \"\",\n                              \"wmsordst_1_qsts_code\": \"\",\n                              \"wmsordl1_analytic_1_info\": \"\",\n                              \"wmsordst_weight_of_weigh\": \"\",\n                              \"wmsordst_reweigh\": 0.0,\n                              \"wmsordto_tot_gross_weight\": 0.0,\n                              \"wmsordto_tot_net_weight\": 0.0,\n                              \"wmsordto_tot_volume\": 0.0,\n                              \"wmsordto_weight_qmus_measure_code\": \"KGM\",\n                              \"wmsordto_volume_qmus_measure_code\": \"CBM\",\n                              \"wmsordst_unicity\": \"FIFO\",\n                              \"wmsordst_calculate_number_order\": false,\n                              \"wmsordst_calculate_number_order_stock\": true,\n                              \"wmsordst_calculate_weights_and_volumes\": true,\n                              \"orderreferences\": {\n                                \"wmsordre\": {\n                                  \"wmsordre_qref_custom_reference\": \"PAANCEEL\",\n                                  \"wmsordre_value\": \"18979\"\n                                }\n                              }\n                            }\n                          ]\n                        }\n                      }\n                    }\n                  ]\n                },\n                \"addresses\": {\n                  \"addresses_data\": [\n                    {\n                      \"qpar_party_code\": \"CUS\",\n                      \"qparx_definition\": \"Customer\",\n                      \"cnicp_nad_name1\": \"\",\n                      \"cnicp_nad_name2\": \"\",\n                      \"cnicp_nad_street1\": \"\",\n                      \"cnicp_nad_street2\": \"\",\n                      \"cnicp_nad_postal_code\": \"\",\n                      \"cnicp_nad_location\": \"\",\n                      \"cnicp_nad_country_country_code\": \"\",\n                      \"cnicp_nad_countryx_country_name\": \"\",\n                      \"cnicp_contact_first_name\": \"Leonid\",\n                      \"cnicp_contact_middle_name\": \"\",\n                      \"cnicp_contact_last_name\": \"Koyashov\",\n                      \"cnicp_contact_job_title\": \"\",\n                      \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                      \"cnicp_contact_qtoax_definition\": \"\",\n                      \"cnicp_email_address\": \"\",\n                      \"cnicp_fax_number\": \"\",\n                      \"cnicp_mobile_number\": \"\",\n                      \"cnicp_phone_number\": \"\",\n                      \"cnicp_remarks\": \"\",\n                      \"numbers\": {\n                        \"nbr_general\": {\n                          \"qnbr_number_code\": \"000041511\",\n                          \"nbr_value\": 41511\n                        }\n                      },\n                      \"ref\": {\n                        \"cnire\": {\n                          \"qref_custom_reference\": \"PARTY\",\n                          \"qrefx_definition\": \"Party reference\",\n                          \"cnire_value\": \"2349\"\n                        }\n                      },\n                      \"handling_instructions\": \"\",\n                      \"dates_and_times\": \"\",\n                      \"communications\": \"\"\n                    },\n                    {\n                      \"qpar_party_code\": \"TPT\",\n                      \"qparx_definition\": \"\",\n                      \"cnicp_nad_name1\": \"\",\n                      \"cnicp_nad_name2\": \"\",\n                      \"cnicp_nad_street1\": \"\",\n                      \"cnicp_nad_street2\": \"\",\n                      \"cnicp_nad_postal_code\": \"\",\n                      \"cnicp_nad_location\": \"\",\n                      \"cnicp_nad_country_country_code\": \"\",\n                      \"cnicp_nad_countryx_country_name\": \"\",\n                      \"cnicp_contact_first_name\": \"\",\n                      \"cnicp_contact_middle_name\": \"\",\n                      \"cnicp_contact_last_name\": \"\",\n                      \"cnicp_contact_job_title\": \"\",\n                      \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                      \"cnicp_contact_qtoax_definition\": \"\",\n                      \"cnicp_email_address\": \"\",\n                      \"cnicp_fax_number\": \"\",\n                      \"cnicp_mobile_number\": \"\",\n                      \"cnicp_phone_number\": \"\",\n                      \"cnicp_remarks\": \"\",\n                      \"numbers\": {\n                        \"nbr_general\": {\n                          \"qnbr_number_code\": \"OLS\",\n                          \"qnbrx_definition\": \"OLS Address id\",\n                          \"nbr_value\": 1605\n                        }\n                      },\n                      \"ref\": \"\",\n                      \"charges\": {\n                        \"charges_data\": {\n                          \"charge_details\": {\n                            \"charge_details_data\": [\n                              {\n                                \"finchdt_qitp_invoice_type_code\": \"PUR\",\n                                \"finchdt_charge_code\": \"101\",\n                                \"finchdt_base_1_qvar_variable_code\": \"LS\",\n                                \"finchdt_base_1_qvar_variable_source_code\": \"NONE\",\n                                \"finchdt_tariff_value\": 0.0,\n                                \"finchdt_tariff_qcux_currency_code\": \"EUR\"\n                              },\n                              {\n                                \"finchdt_qitp_invoice_type_code\": \"SAL\",\n                                \"finchdt_charge_code\": \"101\",\n                                \"finchdt_base_1_qvar_variable_code\": \"LS\",\n                                \"finchdt_base_1_qvar_variable_source_code\": \"NONE\",\n                                \"finchdt_tariff_value\": 0.0,\n                                \"finchdt_tariff_qcux_currency_code\": \"EUR\"\n                              }\n                            ]\n                          }\n                        }\n                      },\n                      \"handling_instructions\": \"\",\n                      \"dates_and_times\": \"\",\n                      \"communications\": \"\"\n                    },\n                    {\n                      \"qpar_party_code\": \"CZ\",\n                      \"cnicp_nad_name1\": \"Vanderstappe\",\n                      \"cnicp_nad_name2\": \"\",\n                      \"cnicp_nad_street1\": \"Dynamicalaan 15\",\n                      \"cnicp_nad_street2\": \"\",\n                      \"cnicp_nad_postal_code\": \"2610\",\n                      \"cnicp_nad_location\": \"Wilrijk\",\n                      \"cnicp_nad_country_country_code\": \"\",\n                      \"cnicp_nad_countryx_country_name\": \"\",\n                      \"cnicp_contact_first_name\": \"\",\n                      \"cnicp_contact_middle_name\": \"\",\n                      \"cnicp_contact_last_name\": \"\",\n                      \"cnicp_contact_job_title\": \"\",\n                      \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                      \"cnicp_email_address\": \"\",\n                      \"cnicp_fax_number\": \"+32(0)3 8206300\",\n                      \"cnicp_mobile_number\": \"\",\n                      \"cnicp_phone_number\": \"\",\n                      \"cnicp_remarks\": \"\",\n                      \"ref\": \"\",\n                      \"handling_instructions\": \"\",\n                      \"dates_and_times\": \"\",\n                      \"communications\": \"\"\n                    },\n                    {\n                      \"qpar_party_code\": \"CON\",\n                      \"cnicp_nad_name1\": \"TO ORDER OF M/S GLAVERGULF FZCO\",\n                      \"cnicp_nad_name2\": \"\",\n                      \"cnicp_nad_street1\": \"PO BOX 17430\",\n                      \"cnicp_nad_street2\": \"\",\n                      \"cnicp_nad_postal_code\": \"\",\n                      \"cnicp_nad_location\": \"JEBEL ALI FREE ZONE - DUBAI\",\n                      \"cnicp_nad_country_country_code\": \"\",\n                      \"cnicp_nad_countryx_country_name\": \"\",\n                      \"cnicp_contact_first_name\": \"\",\n                      \"cnicp_contact_middle_name\": \"\",\n                      \"cnicp_contact_last_name\": \"\",\n                      \"cnicp_contact_job_title\": \"\",\n                      \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                      \"cnicp_email_address\": \"\",\n                      \"cnicp_fax_number\": \"\",\n                      \"cnicp_mobile_number\": \"\",\n                      \"cnicp_phone_number\": \"\",\n                      \"cnicp_remarks\": \"\",\n                      \"ref\": \"\",\n                      \"handling_instructions\": \"\",\n                      \"dates_and_times\": \"\",\n                      \"communications\": \"\"\n                    },\n                    {\n                      \"qpar_party_code\": \"NOT\",\n                      \"cnicp_nad_name1\": \"M/S GLAVERGULF FZCO\",\n                      \"cnicp_nad_name2\": \"\",\n                      \"cnicp_nad_street1\": \"PO BOX 17430\",\n                      \"cnicp_nad_street2\": \"\",\n                      \"cnicp_nad_postal_code\": \"\",\n                      \"cnicp_nad_location\": \"JEBEL ALI FREE ZONE - DUBAI\",\n                      \"cnicp_nad_country_country_code\": \"\",\n                      \"cnicp_nad_countryx_country_name\": \"\",\n                      \"cnicp_contact_first_name\": \"\",\n                      \"cnicp_contact_middle_name\": \"\",\n                      \"cnicp_contact_last_name\": \"\",\n                      \"cnicp_contact_job_title\": \"\",\n                      \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                      \"cnicp_email_address\": \"\",\n                      \"cnicp_fax_number\": \"\",\n                      \"cnicp_mobile_number\": \"\",\n                      \"cnicp_phone_number\": \"\",\n                      \"cnicp_remarks\": \"\",\n                      \"ref\": \"\",\n                      \"handling_instructions\": \"\",\n                      \"dates_and_times\": \"\",\n                      \"communications\": \"\"\n                    },\n                    {\n                      \"qpar_party_code\": \"NOT2\",\n                      \"cnicp_nad_name1\": \"\",\n                      \"cnicp_nad_name2\": \"\",\n                      \"cnicp_nad_street1\": \"\",\n                      \"cnicp_nad_street2\": \"\",\n                      \"cnicp_nad_postal_code\": \"\",\n                      \"cnicp_nad_location\": \"\",\n                      \"cnicp_nad_country_country_code\": \"\",\n                      \"cnicp_nad_countryx_country_name\": \"\",\n                      \"cnicp_contact_first_name\": \"\",\n                      \"cnicp_contact_middle_name\": \"\",\n                      \"cnicp_contact_last_name\": \"\",\n                      \"cnicp_contact_job_title\": \"\",\n                      \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                      \"cnicp_email_address\": \"\",\n                      \"cnicp_fax_number\": \"\",\n                      \"cnicp_mobile_number\": \"\",\n                      \"cnicp_phone_number\": \"\",\n                      \"cnicp_remarks\": \"\",\n                      \"ref\": \"\",\n                      \"handling_instructions\": \"\",\n                      \"dates_and_times\": \"\",\n                      \"communications\": \"\"\n                    }\n                  ]\n                }\n              },\n              \"main_transport\": {\n                \"cnimt_agent\": {\n                  \"cnicp_comment\": \"\",\n                  \"cnicp_contact_first_name\": \"\",\n                  \"cnicp_contact_job_title\": \"\",\n                  \"cnicp_contact_last_name\": \"\",\n                  \"cnicp_contact_middle_name\": \"\",\n                  \"cnicp_contact_qtoax_definition\": \"\",\n                  \"cnicp_contact_qtoa_term_of_address_code\": \"\",\n                  \"cnicp_email_address\": \"\",\n                  \"cnicp_fax_number\": \"\",\n                  \"cnicp_mobile_number\": \"\",\n                  \"cnicp_nad_country_iso_code\": \"\",\n                  \"cnicp_nad_countryx_country_name\": \"\",\n                  \"cnicp_nad_country_country_code\": \"\",\n                  \"cnicp_nad_location\": \"\",\n                  \"cnicp_nad_name1\": \"\",\n                  \"cnicp_nad_name2\": \"\",\n                  \"cnicp_nad_postal_code\": \"\",\n                  \"cnicp_nad_street1\": \"\",\n                  \"cnicp_nad_street2\": \"\",\n                  \"cnicp_phone_number\": \"\",\n                  \"cnicp_sequence_number\": \"\",\n                  \"cnimt_qmotx_definition\": \"Maritime transport\",\n                  \"cnimt_qmot_code\": \"VESSEL\",\n                  \"qparx_definition\": \"Agent\",\n                  \"qpar_party_code\": \"AGT\",\n                  \"transport_mode_air\": \"\",\n                  \"numbers\": {\n                    \"nbr_general\": {\n                      \"qnbr_number_code\": \"000041511\",\n                      \"nbr_value\": \"MSCBEL\"\n                    }\n                  },\n                  \"transport_mode_maritime\": {\n                    \"cnitmm\": {\n                      \"cnitmm_vessel_name\": \"\"\n                    }\n                  },\n                  \"locations\": {\n                    \"cnipl_cnimt\": [\n                      {\n                        \"qloc_location_qual\": \"PDI\",\n                        \"qlocx_definition\": \"Port of discharge\",\n                        \"cnipl_country_country_code\": \"AE\",\n                        \"cnipl_locode_location_code\": \"JEA\",\n                        \"cnipl_location_lc\": \"JEBEL ALI\",\n                        \"cnipl_berth_berth_code\": \"\",\n                        \"cnipl_berthx_definition\": \"\",\n                        \"dates_and_times\": {\n                          \"cnipldt\": {\n                            \"qdtm_date_time_qual\": \"ETA\",\n                            \"cnipldt_date\": \"\",\n                            \"cnipldt_time\": \"\"\n                          }\n                        }\n                      },\n                      {\n                        \"qloc_location_qual\": \"PLO\",\n                        \"qlocx_definition\": \"Port of loading\",\n                        \"cnipl_country_country_code\": \"BE\",\n                        \"cnipl_locode_location_code\": \"ANR\",\n                        \"cnipl_location_lc\": \"ANTWERP\",\n                        \"cnipl_berth_berth_code\": \"\",\n                        \"cnipl_berthx_definition\": \"\",\n                        \"dates_and_times\": {\n                          \"cnipldt\": [\n                            {\n                              \"qdtm_date_time_qual\": \"ETS\",\n                              \"cnipldt_date\": \"\",\n                              \"cnipldt_time\": \"\"\n                            },\n                            {\n                              \"qdtm_date_time_qual\": \"CLD\",\n                              \"cnipldt_date\": \"\",\n                              \"cnipldt_time\": \"\"\n                            }\n                          ]\n                        }\n                      }\n                    ]\n                  },\n                  \"ref\": \"\",\n                  \"documents\": {\n                    \"documents_data\": {\n                      \"qdoc_code\": \"B/L\",\n                      \"cnido_document_number\": \"MSCU2548546\",\n                      \"cnido_date_of_issue\": \"2021-12-31\"\n                    }\n                  },\n                  \"charges\": {\n                    \"charges_data\": {\n                      \"charge_details\": {\n                        \"charge_details_data\": [\n                          {\n                            \"finchdt_qitp_invoice_type_code\": \"PUR\",\n                            \"finchdt_charge_code\": \"111\",\n                            \"finchdt_base_1_qvar_variable_code\": \"NBCNT\",\n                            \"finchdt_base_1_qvar_variable_source_code\": \"CNI\",\n                            \"finchdt_tariff_value\": 0.0,\n                            \"finchdt_tariff_qcux_currency_code\": \"EUR\"\n                          },\n                          {\n                            \"finchdt_qitp_invoice_type_code\": \"SAL\",\n                            \"finchdt_charge_code\": \"111\",\n                            \"finchdt_base_1_qvar_variable_code\": \"NBCNT\",\n                            \"finchdt_base_1_qvar_variable_source_code\": \"CNI\",\n                            \"finchdt_tariff_value\": 0.0,\n                            \"finchdt_tariff_qcux_currency_code\": \"EUR\"\n                          }\n                        ]\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        },\n        \"cnitp\": {\n          \"cnitp_data\": [\n            {\n              \"cnitp_transport_number\": 1,\n              \"qmot_code\": \"ROAD\",\n              \"cnitp_carriage_type\": \"O\",\n              \"cnitp_qtp3_type_3_code\": \"V\",\n              \"wmsordl3_line_numbers\": {\n                \"wmsordl3_line_number\": [\n                  1,\n                  2\n                ]\n              }\n            },\n            {\n              \"cnitp_transport_number\": 2,\n              \"qmot_code\": \"ROAD\",\n              \"cnitp_carriage_type\": \"O\",\n              \"cnitp_qtp3_type_3_code\": \"V\"\n            }\n          ]\n        },\n        \"cniar\": {\n          \"cniar_data\": [\n            {\n              \"cniar_line_number\": 1,\n              \"qrct_resource_type\": \"CNI000330001\",\n              \"cnitp_transport_numbers\": {\n                \"cnitp_transport_number\": [\n                  1,\n                  2\n                ]\n              },\n              \"handling_instructions\": {\n                \"cnihn\": [\n                  {\n                    \"han_code\": \"REMARK\",\n                    \"cnihn_instructions\": \"Instructies op de booking order\"\n                  },\n                  {\n                    \"han_code\": \"LADEN\",\n                    \"cnihn_instructions\": \"Instructies op de booking order\"\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    }\n  }\n}",
     "tags": [
       "api_push",
       "target_sample"
     ],
     "metadata": {
-      "source_file": "Sample JSON all fields.json"
+      "source_file": "Standard_JSON_for_integration_CNI_v15.json"
     },
-    "created_at": "2026-07-02T08:46:57.753689Z"
+    "created_at": "2026-07-03T08:52:12.697942Z"
   }
 ]

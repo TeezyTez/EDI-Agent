@@ -17,3 +17,15 @@ def test_generate_mapping_table_matches_similar_fields():
     assert mappings[0].status == MappingStatus.AUTO_CONFIRMED
     assert mappings[0].source_field == "order_id"
     assert mappings[1].source_field == "amount"
+
+
+def test_generate_mapping_table_uses_logistics_aliases():
+    sources = [
+        FieldSchema(field_name="GFBL.BL_NO", description="提单号", type="string"),
+        FieldSchema(field_name="GFBL.REMARK", description="备注", type="string"),
+    ]
+    targets = [FieldSchema(field_name="blNo", description="Bill of Lading number", type="string")]
+
+    mappings = generate_mapping_table(sources, targets)
+
+    assert mappings[0].source_field == "GFBL.BL_NO"

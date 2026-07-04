@@ -16,6 +16,34 @@ def test_build_payload_template_supports_nested_paths():
     assert payload == {"order": {"orderNo": "SO-1001", "amount": {"total": 199.5}}}
 
 
+def test_build_payload_template_supports_array_paths():
+    payload = build_payload_template(
+        [
+            FieldSchema(field_name="shipperPartyDetails[]", type="array"),
+            FieldSchema(field_name="shipperPartyDetails[].partyName", type="string", example="ACME"),
+            FieldSchema(field_name="equipmentDetails[].equipmentNumber", type="string", example="MSDU4529564"),
+            FieldSchema(field_name="items[].equipmentNumber[]", type="array"),
+        ]
+    )
+
+    assert payload == {
+        "shipperPartyDetails": [{"partyName": "ACME"}],
+        "equipmentDetails": [{"equipmentNumber": "MSDU4529564"}],
+        "items": [{"equipmentNumber": []}],
+    }
+
+
+def test_build_payload_template_keeps_array_children_when_parent_appears_later():
+    payload = build_payload_template(
+        [
+            FieldSchema(field_name="equipmentDetails[].equipmentNumber", type="string", example="MSDU4529564"),
+            FieldSchema(field_name="equipmentDetails[]", type="array"),
+        ]
+    )
+
+    assert payload == {"equipmentDetails": [{"equipmentNumber": "MSDU4529564"}]}
+
+
 def test_parse_api_document_supports_docx_table():
     endpoint, method, fields = parse_api_document("sample_data/target_api_doc.docx")
 

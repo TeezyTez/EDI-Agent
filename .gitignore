@@ -7,3 +7,4 @@ __pycache__/
 
 workspace/uploads/*
 !workspace/uploads/.gitkeep
+workspace/cache/

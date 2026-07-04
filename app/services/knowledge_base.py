@@ -1,4 +1,5 @@
 from datetime import UTC, datetime
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -30,6 +31,35 @@ def _save_items(items: list[KnowledgeItem]) -> None:
         json.dumps([item.model_dump(mode="json") for item in items], ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+
+
+def _file_fingerprint(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _tags_match(existing_tags: list[str], requested_tags: list[str]) -> bool:
+    return set(requested_tags).issubset(set(existing_tags))
+
+
+def _existing_llm_items(source: Path, tags: list[str]) -> list[KnowledgeItem]:
+    fingerprint = _file_fingerprint(source)
+    matches: list[KnowledgeItem] = []
+    fallback_matches: list[KnowledgeItem] = []
+    for item in _load_items():
+        metadata = item.metadata or {}
+        if metadata.get("source_file") != source.name or not metadata.get("llm_extracted"):
+            continue
+        if not _tags_match(item.tags, tags):
+            continue
+        if metadata.get("source_fingerprint") == fingerprint:
+            matches.append(item)
+        elif "source_fingerprint" not in metadata:
+            fallback_matches.append(item)
+    return matches or fallback_matches
 
 
 def list_knowledge_items() -> list[KnowledgeItem]:
@@ -276,10 +306,19 @@ def ingest_knowledge_file(
     source = Path(path)
     item_tags = tags or []
     if use_llm:
+        existing = _existing_llm_items(source, item_tags)
+        if existing:
+            return existing
+
         from app.services.llm_knowledge_extractor import extract_knowledge_with_deepseek
 
         try:
             llm_items = extract_knowledge_with_deepseek(source.name, extract_file_text(source), item_tags)
+            fingerprint = _file_fingerprint(source)
+            for item in llm_items:
+                metadata = item.get("metadata") if isinstance(item.get("metadata"), dict) else {}
+                metadata["source_fingerprint"] = fingerprint
+                item["metadata"] = metadata
             created = _add_llm_items(llm_items, category, item_tags)
             if created:
                 return created

@@ -85,6 +85,7 @@ with tab_api:
     )
     use_llm = st.checkbox("启用 DeepSeek 语义增强", value=False, help="需要在 .env 中配置 DEEPSEEK_API_KEY。未启用时只使用本地规则匹配。")
     llm_max_targets = st.number_input("DeepSeek 最多增强字段数", min_value=1, max_value=200, value=20, step=1)
+    st.caption("首次处理 PDF/补充资料会调用 MIMO/DeepSeek，可能需要数分钟；同一文件后续会复用缓存和已导入知识。")
     if api_doc is not None and api_doc.name.lower().endswith(".pdf"):
         if MIMO_API_KEY and MIMO_BASE_URL:
             st.caption(f"PDF 多模态解析：已启用 MIMO（{MIMO_MODEL}）")
@@ -180,6 +181,15 @@ with tab_api:
         st.download_button("下载映射文档", report_text, file_name="api_push_mapping_report.md", mime="text/markdown")
         if api_result.mapping_review_path:
             st.caption(f"映射审查文件：{api_result.mapping_review_path}")
+        if api_result.diagnostics_path:
+            diagnostics_bytes = Path(api_result.diagnostics_path).read_bytes()
+            st.caption(f"映射诊断文件：{api_result.diagnostics_path}")
+            st.download_button(
+                "下载 mapping_diagnostics.json",
+                diagnostics_bytes,
+                file_name="mapping_diagnostics.json",
+                mime="application/json",
+            )
         st.markdown(report_text)
 
 with tab_knowledge:

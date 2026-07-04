@@ -20,13 +20,14 @@ def validate_mappings_against_source_schema(
     validated: list[FieldMapping] = []
     invalid_count = 0
     for mapping in mappings:
-        source_parts = split_source_expression(mapping.source_field)
+        source_parts = mapping.source_fields or split_source_expression(mapping.source_field)
         invalid_parts = [part for part in source_parts if part not in valid_source_fields]
         if invalid_parts:
             invalid_count += 1
             validated.append(
                 FieldMapping(
                     source_field=None,
+                    source_fields=[],
                     target_field=mapping.target_field,
                     confidence=min(mapping.confidence, 0.69),
                     reason=(
@@ -34,6 +35,8 @@ def validate_mappings_against_source_schema(
                         f"{', '.join(invalid_parts)}; original=({mapping.reason})"
                     ),
                     rule_type=mapping.rule_type,
+                    fixed_value=mapping.fixed_value,
+                    transform_expression=mapping.transform_expression,
                     status=MappingStatus.UNMATCHED,
                 )
             )

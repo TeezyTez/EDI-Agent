@@ -1,4 +1,5 @@
 from pathlib import Path
+import hashlib
 import json
 import re
 from typing import Any
@@ -7,10 +8,11 @@ import pandas as pd
 from docx import Document
 from pypdf import PdfReader
 
-from app.config import DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEEPSEEK_MODEL, GENERATED_DIR, MIMO_API_KEY, REPORT_DIR, ensure_workspace
+from app.config import CACHE_DIR, DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEEPSEEK_MODEL, GENERATED_DIR, MIMO_API_KEY, REPORT_DIR, ensure_workspace
 from app.models.schema import ApiPushResult, FieldMapping, FieldSchema, MappingStatus
 from app.services.document_parser import _read_table, _to_bool
 from app.services.field_matcher import generate_mapping_table
+from app.services.llm_mapping_enhancer import _knowledge_for_target, _top_candidates
 from app.services.llm_mapping_enhancer import apply_knowledge_hints, enhance_mappings_with_deepseek
 from app.services.mapping_review import export_mapping_review_excel
 from app.services.mapping_validator import validate_mappings_against_source_schema
@@ -64,6 +66,40 @@ CANONICAL_COLUMN_PRIORITY = {
     "param_path": ["param_path", "json_path", "field_path", "字段路径", "字段路徑", "参数路径", "參數路徑", "node"],
     "param_name": ["param_name", "参数名", "參數名", "field_name", "字段名", "parameter", "param", "node", "name"],
 }
+
+
+def _json_fingerprint(payload: Any) -> str:
+    raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, default=str).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def _field_schema_fingerprint(fields: list[FieldSchema]) -> str:
+    return _json_fingerprint([field.model_dump(mode="json") for field in fields])
+
+
+def _mapping_schema_fingerprint(mappings: list[FieldMapping]) -> str:
+    return _json_fingerprint([mapping.model_dump(mode="json") for mapping in mappings])
+
+
+def _load_cached_mappings(path: Path) -> list[FieldMapping] | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return [FieldMapping(**item) for item in payload]
+    except (OSError, json.JSONDecodeError, TypeError, ValueError):
+        return None
+
+
+def _write_cached_mappings(path: Path, mappings: list[FieldMapping]) -> None:
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps([mapping.model_dump(mode="json") for mapping in mappings], ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    except OSError:
+        pass
 
 
 def _clean(value: Any, default: str = "") -> str:
@@ -471,10 +507,45 @@ def _default_value(field: FieldSchema) -> Any:
 def _set_nested(payload: dict[str, Any], dotted_path: str, value: Any) -> None:
     parts = [part for part in dotted_path.split(".") if part]
     cursor = payload
-    for part in parts[:-1]:
-        cursor = cursor.setdefault(part, {})
-    if parts:
-        cursor[parts[-1]] = value
+    for index, part in enumerate(parts):
+        is_leaf = index == len(parts) - 1
+        is_array = part.endswith("[]")
+        key = part[:-2] if is_array else part
+        if not key:
+            continue
+
+        if is_array:
+            if is_leaf:
+                existing = cursor.get(key)
+                if existing is None:
+                    cursor[key] = value if isinstance(value, list) else [value]
+                elif not existing and isinstance(existing, list) and value != []:
+                    cursor[key] = value if isinstance(value, list) else [value]
+                continue
+
+            existing = cursor.get(key)
+            if not isinstance(existing, list):
+                existing = [{}]
+                cursor[key] = existing
+            elif not existing:
+                existing.append({})
+            elif not isinstance(existing[0], dict):
+                existing[0] = {}
+            cursor = existing[0]
+            continue
+
+        if is_leaf:
+            existing = cursor.get(key)
+            if isinstance(existing, (dict, list)) and value in ({}, []):
+                continue
+            cursor[key] = value
+            continue
+
+        existing = cursor.get(key)
+        if not isinstance(existing, dict):
+            existing = {}
+            cursor[key] = existing
+        cursor = existing
 
 
 def build_payload_template(api_fields: list[FieldSchema]) -> dict[str, Any]:
@@ -504,6 +575,7 @@ def generate_api_mapping_report(
     mappings: list[FieldMapping],
     payload_template_path: str | Path,
     mapping_review_path: str | Path,
+    diagnostics_path: str | Path,
     report_dir: str | Path,
     llm_message: str = "",
 ) -> Path:
@@ -520,6 +592,7 @@ def generate_api_mapping_report(
 - Endpoint: `{endpoint}`
 - Payload template: `{Path(payload_template_path).as_posix()}`
 - Mapping review workbook: `{Path(mapping_review_path).as_posix()}`
+- Mapping diagnostics: `{Path(diagnostics_path).as_posix()}`
 - LLM: `{llm_message or "Not used."}`
 
 ## Database To API Mapping
@@ -538,6 +611,73 @@ def generate_api_mapping_report(
     return report_path
 
 
+def export_mapping_diagnostics(
+    target_fields: list[FieldSchema],
+    source_fields: list[FieldSchema],
+    baseline_mappings: list[FieldMapping],
+    final_mappings: list[FieldMapping],
+    report_dir: str | Path,
+) -> Path:
+    target = Path(report_dir)
+    target.mkdir(parents=True, exist_ok=True)
+    diagnostics_path = target / "mapping_diagnostics.json"
+    cache_key = _json_fingerprint(
+        {
+            "targets": _field_schema_fingerprint(target_fields),
+            "sources": _field_schema_fingerprint(source_fields),
+            "baseline": _mapping_schema_fingerprint(baseline_mappings),
+            "final": _mapping_schema_fingerprint(final_mappings),
+            "version": 2,
+        }
+    )
+    cache_path = CACHE_DIR / f"mapping_diagnostics_{cache_key}.json"
+    if cache_path.exists():
+        try:
+            diagnostics_path.write_text(cache_path.read_text(encoding="utf-8"), encoding="utf-8")
+            return diagnostics_path
+        except OSError:
+            pass
+
+    baseline_by_target = {mapping.target_field: mapping for mapping in baseline_mappings}
+    final_by_target = {mapping.target_field: mapping for mapping in final_mappings}
+    items: list[dict[str, Any]] = []
+    for index, field in enumerate(target_fields):
+        baseline = baseline_by_target.get(field.field_name)
+        final = final_by_target.get(field.field_name)
+        knowledge = _knowledge_for_target(field)
+        needs_full_candidates = (
+            index < 20
+            or (final is not None and final.status != MappingStatus.UNMATCHED)
+            or (final is not None and ("DeepSeek" in final.reason or "RAG explicit" in final.reason))
+        )
+        if needs_full_candidates:
+            rule_top_candidates = _top_candidates(field, source_fields, 10, [])
+            diagnostics_note = ""
+        else:
+            rule_top_candidates = []
+            diagnostics_note = "Top candidates omitted for low-confidence unmatched field."
+        items.append(
+            {
+                "target_field": field.field_name,
+                "target_description": field.description,
+                "target_type": field.type,
+                "rule_top_candidates": rule_top_candidates,
+                "diagnostics_note": diagnostics_note,
+                "rag_evidence": knowledge,
+                "baseline_decision": baseline.model_dump(mode="json") if baseline else None,
+                "final_decision": final.model_dump(mode="json") if final else None,
+            }
+        )
+    content = json.dumps(items, ensure_ascii=False, indent=2)
+    diagnostics_path.write_text(content, encoding="utf-8")
+    try:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache_path.write_text(content, encoding="utf-8")
+    except OSError:
+        pass
+    return diagnostics_path
+
+
 def run_api_push_mapping_workflow(
     database_doc_path: str | Path,
     api_doc_path: str | Path,
@@ -548,7 +688,19 @@ def run_api_push_mapping_workflow(
     ensure_workspace()
     db_fields = parse_database_document(database_doc_path)
     endpoint, method, api_fields = parse_api_document(api_doc_path)
-    mappings = generate_mapping_table(db_fields, api_fields)
+    baseline_cache_key = _json_fingerprint(
+        {
+            "sources": _field_schema_fingerprint(db_fields),
+            "targets": _field_schema_fingerprint(api_fields),
+            "version": 1,
+        }
+    )
+    baseline_cache_path = CACHE_DIR / f"baseline_mappings_{baseline_cache_key}.json"
+    baseline_mappings = _load_cached_mappings(baseline_cache_path)
+    if baseline_mappings is None:
+        baseline_mappings = generate_mapping_table(db_fields, api_fields)
+        _write_cached_mappings(baseline_cache_path, baseline_mappings)
+    mappings = baseline_mappings
     mappings, rag_message = apply_knowledge_hints(mappings, db_fields, api_fields)
     llm_used = False
     llm_message = rag_message
@@ -568,7 +720,17 @@ def run_api_push_mapping_workflow(
     payload_template = build_payload_template(api_fields)
     payload_template_path = dump_json(payload_template, GENERATED_DIR / "target_api_payload_template.json")
     mapping_review_path = export_mapping_review_excel(mappings)
-    report_path = generate_api_mapping_report(endpoint, method, mappings, payload_template_path, mapping_review_path, REPORT_DIR, llm_message)
+    diagnostics_path = export_mapping_diagnostics(api_fields, db_fields, baseline_mappings, mappings, REPORT_DIR)
+    report_path = generate_api_mapping_report(
+        endpoint,
+        method,
+        mappings,
+        payload_template_path,
+        mapping_review_path,
+        diagnostics_path,
+        REPORT_DIR,
+        llm_message,
+    )
     return ApiPushResult(
         endpoint=endpoint,
         method=method,
@@ -576,6 +738,7 @@ def run_api_push_mapping_workflow(
         payload_template_path=str(payload_template_path),
         mapping_report_path=str(report_path),
         mapping_review_path=str(mapping_review_path),
+        diagnostics_path=str(diagnostics_path),
         llm_used=llm_used,
         llm_message=llm_message,
     )

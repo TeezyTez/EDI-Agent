@@ -25,14 +25,15 @@ REVIEW_COLUMNS = [
 def mappings_to_review_dataframe(mappings: list[FieldMapping]) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for mapping in mappings:
+        display_source = " + ".join(mapping.source_fields) if mapping.source_fields else mapping.source_field or ""
         rows.append(
             {
                 "target_field": mapping.target_field,
-                "suggested_source_field": mapping.source_field or "",
-                "confirmed_source_field": mapping.source_field or "",
+                "suggested_source_field": display_source,
+                "confirmed_source_field": display_source,
                 "confidence": mapping.confidence,
                 "status": mapping.status.value,
-                "review_decision": "confirm" if mapping.source_field else "unmatched",
+                "review_decision": "confirm" if display_source or mapping.fixed_value is not None else "unmatched",
                 "rule_type": mapping.rule_type.value,
                 "reason": mapping.reason,
                 "review_note": "",

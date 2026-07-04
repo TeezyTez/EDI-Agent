@@ -26,3 +26,22 @@ def test_validate_mappings_rejects_sources_not_in_database_schema():
     assert invalid_count == 1
     assert validated[0].source_field is None
     assert validated[0].status == MappingStatus.UNMATCHED
+
+
+def test_validate_mappings_checks_source_fields_list():
+    mappings = [
+        FieldMapping(
+            source_field="GFBL.JOB_NO + GFBL.BL_NO",
+            source_fields=["GFBL.JOB_NO", "FAKE.FIELD"],
+            target_field="job",
+            confidence=0.88,
+            reason="DeepSeek",
+            status=MappingStatus.NEED_REVIEW,
+        )
+    ]
+
+    validated, invalid_count = validate_mappings_against_source_schema(mappings, {"GFBL.JOB_NO"})
+
+    assert invalid_count == 1
+    assert validated[0].source_fields == []
+    assert validated[0].status == MappingStatus.UNMATCHED
